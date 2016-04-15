@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,27 +12,6 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <StartupObject>
     </StartupObject>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,9 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\titles\0005000E1010EC00\48\CDecrypt.exe" />
+    <Content Include="favicon %281%29.ico" />
     <Content Include="icon.ico" />
     <None Include="Resources\mp3enc.exe" />
     <None Include="Resources\dbutton.png" />
+    <None Include="Resources\SARCPack.exe" />
+    <None Include="Resources\SARCExtract.exe" />
     <None Include="Resources\yaz0enc.exe" />
     <None Include="Resources\yaz0dec.exe" />
     <None Include="Resources\CDecrypt.exe" />
@@ -137,21 +118,17 @@
     <None Include="Resources\libvorbis.dll" />
     <None Include="Resources\libmpg123-0.dll" />
     <None Include="Resources\libg7221_decode.dll" />
+    <None Include="Resources\test.exe" />
     <None Include="Resources\unzip.exe" />
     <None Include="Resources\MMA4.png" />
     <None Include="Resources\logo.png" />
+    <None Include="Resources\icon ed2.png" />
     <None Include="Resources\Updater.exe" />
     <None Include="Resources\DiscU.exe" />
     <None Include="Resources\libeay32.dll" />
     <None Include="app.config" />
     <None Include="Resources\GameTDB.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <None Include="Resources\MMA3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
