@@ -1,4 +1,7 @@
-﻿namespace Uwizard {
+﻿using System;
+
+namespace Uwizard {
+    [Obsolete]
     public struct Langs {
         public static string[][] texts = new string[][] {
 #region ENGLISH_UWIZARD
@@ -1058,6 +1061,7 @@
 },
 #endregion
         };
+        [Obsolete]
         public static void loadlang(Uwizard.Form1 userform) {
             userform.sha1_correct = userform.uwiz_langtext[0];
             userform.sha1_incorrect = userform.uwiz_langtext[1];
