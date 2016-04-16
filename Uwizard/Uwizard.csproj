@@ -84,7 +84,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GZip.cs" />
-    <Compile Include="keyhashes.cs" />
     <Compile Include="Langs.cs" />
     <Compile Include="LangSel.cs">
       <SubType>Form</SubType>
@@ -117,6 +116,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\KeyHashes\vWiiResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>vWiiResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\KeyHashes\WiiUResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WiiUResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,6 +132,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\KeyHashes\vWiiResources.Designer.cs">
+      <DependentUpon>vWiiResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\KeyHashes\WiiUResources.Designer.cs">
+      <DependentUpon>WiiUResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="SARC.cs" />
   </ItemGroup>
