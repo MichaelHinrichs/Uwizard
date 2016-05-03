@@ -1,9 +1,17 @@
+#define NEWLAYOUT
+
 using System;
-using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.IO;
+using System.IO.Compression;
+using System.Net;
 using System.Windows.Forms;
+using Uwizard.App.Views;
+using Uwizard.Entities.Helpers;
 
 namespace Uwizard {
-    static class Program {
+    public class Program {
         [System.Runtime.InteropServices.DllImport("kernel32.dll")]
         static extern bool AttachConsole(int dwProcessId);
         [System.Runtime.InteropServices.DllImport("kernel32.dll")]
@@ -128,7 +136,45 @@ namespace Uwizard {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            if (!File.Exists(ConfigurationManager.AppSettings["GameDatabasePath"]))
+            {
+                File.Create(ConfigurationManager.AppSettings["GameDatabasePath"]).Close();
+            }
+            if (!File.Exists(ConfigurationManager.AppSettings["GameDescriptionPath"]))
+            {
+                try
+                {
+                    var webClient = new WebClient();
+                    webClient.DownloadFile("http://www.gametdb.com/wiiutdb.zip", "wiiutdb.zip");
+
+                    using (var zipToOpen = new FileStream(Path.GetFullPath("wiiutdb.zip"), FileMode.Open))
+                    {
+                        using (var archive = new ZipArchive(zipToOpen, ZipArchiveMode.Read))
+                        {
+                            archive.ExtractToDirectory(".//");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // ignored
+                }
+            }
+            var cvnam = "covers";
+            if (!Directory.Exists(cvnam)) Directory.CreateDirectory(cvnam);
+            cvnam = "covers/full";
+            if (!Directory.Exists(cvnam)) Directory.CreateDirectory(cvnam);
+            cvnam = "covers/front";
+            if (!Directory.Exists(cvnam)) Directory.CreateDirectory(cvnam);
+            cvnam = "covers/3d";
+            if (!Directory.Exists(cvnam)) Directory.CreateDirectory(cvnam);
+            cvnam = "covers/disc";
+            if (!Directory.Exists(cvnam)) Directory.CreateDirectory(cvnam);
+#if (NEWLAYOUT)
+            Application.Run(new MainForm());
+            #else
+                Application.Run(new Form1());
+            #endif
         }
     }
 }
