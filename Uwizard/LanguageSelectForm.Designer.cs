@@ -1,5 +1,9 @@
+using System;
+using Uwizard.Entities.Enums;
+using Uwizard.Resources.Languages;
+
 namespace Uwizard {
-    partial class LangSel {
+    partial class LanguageSelectForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,7 +27,7 @@ namespace Uwizard {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LangSel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LanguageSelectForm));
             this.pleaseseltext = new System.Windows.Forms.Label();
             this.lang = new System.Windows.Forms.ComboBox();
             this.OKbutton = new System.Windows.Forms.Button();
@@ -36,6 +40,7 @@ namespace Uwizard {
             this.pleaseseltext.Location = new System.Drawing.Point(0, 0);
             this.pleaseseltext.Name = "pleaseseltext";
             this.pleaseseltext.Size = new System.Drawing.Size(292, 87);
+            this.pleaseseltext.Text = Strings.LanguageSelect;
             this.pleaseseltext.TabIndex = 0;
             this.pleaseseltext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -43,18 +48,12 @@ namespace Uwizard {
             // 
             this.lang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lang.FormattingEnabled = true;
-            this.lang.Items.AddRange(new object[] {
-            "English",
-            "Français",
-            "Português",
-            "Deutsch",
-            "Español",
-            "Italiano"
-            });
+            this.lang.DataSource = Enum.GetValues(typeof(LanguagesEnum));
             this.lang.Location = new System.Drawing.Point(12, 90);
             this.lang.Name = "lang";
             this.lang.Size = new System.Drawing.Size(268, 21);
             this.lang.TabIndex = 1;
+            lang.SelectedIndexChanged += new System.EventHandler(this.LanguageChanged);
             // 
             // OKbutton
             // 
@@ -62,11 +61,11 @@ namespace Uwizard {
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 2;
-            this.OKbutton.Text = "OK";
+            this.OKbutton.Text = Strings.OK;
             this.OKbutton.UseVisualStyleBackColor = true;
             this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
-            // LangSel
+            // LanguageSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,9 +77,8 @@ namespace Uwizard {
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "LangSel";
+            this.Name = "LanguageSelectForm";
             this.Text = "Uwizard";
-            this.Load += new System.EventHandler(this.LangSel_Load);
             this.ResumeLayout(false);
 
         }
