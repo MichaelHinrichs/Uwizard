@@ -1,5 +1,55 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Uwizard.Properties" GeneratedClassName="Settings">
   <Profiles />
-  <Settings />
+  <Settings>
+    <Setting Name="Language" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="GameFileFolderList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="GameTDBCoverFront" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/coverHQ/&lt;/string&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/coverM/&lt;/string&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/cover/&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="GameTDBCover3D" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/cover3D/&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="GameTDBCoverFull" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/coverfullHQ/&lt;/string&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/coverfullM/&lt;/string&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/coverfull/&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="GameTDBCoverDisc" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/discHQ/&lt;/string&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/discM/&lt;/string&gt;
+  &lt;string&gt;http://art.gametdb.com/wiiu/disc/&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="UserAncastStarbuckKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+        </Value>
+    </Setting>
+    <Setting Name="UserAncastEspressoKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+        </Value>
+    </Setting>
+    <Setting Name="UserCommonKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+        </Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

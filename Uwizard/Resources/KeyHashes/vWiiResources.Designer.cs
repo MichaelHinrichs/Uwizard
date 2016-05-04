@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Uwizard.KeyHashes {
+namespace Uwizard.Resources.KeyHashes {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Uwizard.KeyHashes {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Uwizard.KeyHashes.vWiiResources", typeof(vWiiResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Uwizard.Resources.KeyHashes.vWiiResources", typeof(vWiiResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

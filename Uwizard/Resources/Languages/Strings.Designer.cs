@@ -1384,6 +1384,15 @@ namespace Uwizard.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uwizard has been successfully updated to version {0}, but because of an incompatibility issue, if you updated from version 1.0.0, then your system keys are mangled and need to be re-entered..
+        /// </summary>
+        internal static string UwizardUpdatePartialSuccess {
+            get {
+                return ResourceManager.GetString("UwizardUpdatePartialSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         internal static string Version {
@@ -1474,6 +1483,15 @@ namespace Uwizard.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zeroes unused data. This allows the backup to be compressed more efficiently using NTFS native compression..
+        /// </summary>
+        internal static string WiiUGameScrubInformation {
+            get {
+                return ResourceManager.GetString("WiiUGameScrubInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WUD Manager.
         /// </summary>
         internal static string WUDManager {
@@ -1524,15 +1542,6 @@ namespace Uwizard.Resources.Languages {
         internal static string Yes {
             get {
                 return ResourceManager.GetString("Yes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Zeroes unused data. This allows the backup to be compressed more efficiently using NTFS native compression..
-        /// </summary>
-        internal static string ZeroUnusedData {
-            get {
-                return ResourceManager.GetString("ZeroUnusedData", resourceCulture);
             }
         }
     }
