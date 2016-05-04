@@ -769,8 +769,11 @@
     <value>Yes</value>
     <comment>129</comment>
   </data>
-  <data name="ZeroUnusedData" xml:space="preserve">
+  <data name="WiiUGameScrubInformation" xml:space="preserve">
     <value>Zeroes unused data. This allows the backup to be compressed more efficiently using NTFS native compression.</value>
     <comment>108</comment>
+  </data>
+  <data name="UwizardUpdatePartialSuccess" xml:space="preserve">
+    <value>Uwizard has been successfully updated to version {0}, but because of an incompatibility issue, if you updated from version 1.0.0, then your system keys are mangled and need to be re-entered.</value>
   </data>
 </root>
