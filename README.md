@@ -28,7 +28,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the process for submitting pu
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/EvilGamerX/Uwizard/tags).
 
 ##Credits
 - Mr. Mysterio - Programmer of Uwizard
@@ -37,7 +37,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 - GameTDB - Game Covers
 - VinsCool, capito27, Phanteon, send0r - Translation
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/EvilGamerX/Uwizard/contributors) who participated in this project.
 
 ## License
 
