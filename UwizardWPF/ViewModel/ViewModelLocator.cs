@@ -43,6 +43,7 @@ namespace UwizardWPF.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<GameManagementViewModel>();
         }
 
         public MainViewModel Main

@@ -3,13 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UwizardWPF"
+        xmlns:viewModel="clr-namespace:UwizardWPF.ViewModel"
+        xmlns:views="clr-namespace:UwizardWPF.Views"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280"
-        Background="Blue">
+        Title="MainWindow" Height="Auto" Width="Auto">
     <Grid>
-        <TextBox IsEnabled="{Binding Enabled}" Margin="0,0,0,158" />
-        <CheckBox IsChecked="{Binding Enabled}" Margin="214,185,0,0" />
+        <TabControl ItemsSource="{Binding Tabs}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Header}" FontSize="16" />
+                    </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate DataType="viewModel:GameManagementViewModel">
+                    <views:GameManagementView DataContext="{Binding}"/>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
     </Grid>
 </Window>
