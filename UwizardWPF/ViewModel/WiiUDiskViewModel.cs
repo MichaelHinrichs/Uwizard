@@ -1,5 +1,11 @@
 ﻿using System;
+using System.Linq;
+using System.Windows.Controls;
 using GalaSoft.MvvmLight;
+using UwizardWPF.Entities;
+using UwizardWPF.Entities.Enums;
+using UwizardWPF.Entities.Helpers;
+using UwizardWPF.Extensions;
 
 namespace UwizardWPF.ViewModel
 {
@@ -45,11 +51,6 @@ namespace UwizardWPF.ViewModel
             KeyHash = wiiUDisk.Keyhash;
             Description = wiiUDisk.Description;
             RegionCode = wiiUDisk.RegionCode;
-        }
-
-        public override Control View()
-        {
-            throw new System.NotImplementedException();
         }
 
         public void Update(string id, string name, string key, string keyHash, RegionCodeEnum regionCode, string description)

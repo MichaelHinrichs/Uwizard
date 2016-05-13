@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -36,11 +37,6 @@ namespace UwizardWPF.ViewModel
             streamwWriter.Dispose();
         }
 
-        public override Control View()
-        {
-            return new WUDManagerView(this);
-        }
-
         public void AddFolder(string folder)
         {
             if (!Directory.Exists(folder) || Properties.Settings.Default.GameFileFolderList.Contains(folder)) return;
@@ -63,7 +59,7 @@ namespace UwizardWPF.ViewModel
             {
                 GameDatabase.Add(new WiiUDiskViewModel(file));
             }
-            OnPropertyChanged(nameof(GameDatabase));
+            RaisePropertyChanged(nameof(GameDatabase));
             SaveGameDatabase();
         }
     }
