@@ -15,7 +15,11 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn>
-                        <CheckBox></CheckBox>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Game ID" Width="Auto"/>
                     <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Game Title" />
