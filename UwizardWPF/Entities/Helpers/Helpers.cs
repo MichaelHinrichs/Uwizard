@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace UwizardWPF.Entities.Helpers
 {
@@ -8,13 +11,13 @@ namespace UwizardWPF.Entities.Helpers
     {
         public static void DisplayMessage(string message)
         {
-            System.Windows.Forms.MessageBox.Show(message, "Uwizard");
+            MessageBox.Show(message, "Uwizard", MessageBoxButton.OK);
         }
 
         public static void SetReadOnly(TextBox textBox, bool readOnly)
         {
-            textBox.ReadOnly = readOnly;
-            textBox.BackColor = readOnly ? SystemColors.Control: SystemColors.Window;
+            textBox.IsReadOnly = readOnly;
+            textBox.Background = readOnly ? SystemColors.InactiveSelectionHighlightBrush : SystemColors.WindowBrush;
         }
 
         public static void DownloadCover(string cvnam, IEnumerable<String> klinks, string rtext, string gameid)
@@ -40,9 +43,9 @@ namespace UwizardWPF.Entities.Helpers
             wc.Dispose();
         }
 
-        public static Bitmap OpenBitmap(string fpath)
+        public static BitmapImage OpenBitmap(string fpath)
         {
-            return String.IsNullOrWhiteSpace(fpath) || !File.Exists(fpath) ? null : new Bitmap(fpath);
+            return String.IsNullOrWhiteSpace(fpath) || !File.Exists(fpath) ? null : new BitmapImage(new Uri(fpath));
         }
     }
 }
