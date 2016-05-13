@@ -11,6 +11,19 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListView VerticalAlignment="Center" Background="Aqua" />
+        <ListView>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <CheckBox></CheckBox>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Game ID" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Game Title" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Size" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Region" />
+                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Format" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

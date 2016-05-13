@@ -52,6 +52,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -75,10 +76,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\Enums\LanguagesEnum.cs" />
+    <Compile Include="Entities\Enums\RegionCodeEnum.cs" />
+    <Compile Include="Entities\Helpers\AssemblyHelper.cs" />
+    <Compile Include="Entities\Helpers\Helpers.cs" />
+    <Compile Include="Entities\Point3D.cs" />
+    <Compile Include="Entities\WiiUDisk.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="ViewModel\GameManagementViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TabViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\WiiUDiskViewModel.cs" />
+    <Compile Include="ViewModel\WUDManagerViewModel.cs" />
     <Compile Include="Views\GameManagementView.xaml.cs">
       <DependentUpon>GameManagementView.xaml</DependentUpon>
     </Compile>
@@ -126,9 +137,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
