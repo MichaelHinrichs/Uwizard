@@ -11,5 +11,6 @@ namespace Uwizard.Entities
         public string Description;
         public RegionCodeEnum RegionCode;
         public string FilePath;
+        public bool isGX2;
     }
 }

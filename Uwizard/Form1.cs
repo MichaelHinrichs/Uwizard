@@ -533,7 +533,7 @@ namespace Uwizard
                     /*string tmp = Microsoft.VisualBasic.Interaction.InputBox("Type the game Id. If you are not a dev, then please click cancel. This feature is only for debugging.","Uwizard", id, -1,-1);
             if (tmp != "") id = tmp;//*/
                 }
-
+            WiiUDisk game;
             currentwud = wudpath;
             bool isnew = false;
 
@@ -550,23 +550,24 @@ namespace Uwizard
             }
 
             isnew = true;
+            game = new WiiUDisk();
             if (isGX2)
             {
-                game.id = id;
+                game.Id = id;
                 game.isGX2 = true;
             }
             else
             {
-                game.id = System.IO.Path.GetFileNameWithoutExtension(currentwud);
-                if (game.id.Length != 6)
+                game.Id = System.IO.Path.GetFileNameWithoutExtension(currentwud);
+                if (game.Id.Length != 6)
                 {
-                    game.id = id + "01";
+                    game.Id = id + "01";
                 }
                 else
                 {
-                    if (game.id.Substring(0, 4) != id)
+                    if (game.Id.Substring(0, 4) != id)
                     {
-                        game.id = id + "01";
+                        game.Id = id + "01";
                     }
                 }
             }
@@ -2722,5 +2723,4 @@ exfor:          wc.Dispose();
         }
 
     }
-        public bool isGX2;
 }
