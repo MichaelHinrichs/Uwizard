@@ -6,7 +6,6 @@ namespace UwizardWPF.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private ObservableCollection<TabViewModel> _tabs;
-
         public ObservableCollection<TabViewModel> Tabs
         {
             get { return _tabs;}
