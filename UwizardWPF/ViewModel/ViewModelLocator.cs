@@ -46,13 +46,9 @@ namespace UwizardWPF.ViewModel
             SimpleIoc.Default.Register<GameManagementViewModel>();
         }
 
-        public MainViewModel Main
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
+        public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+
+        public GameManagementViewModel GameManagement => ServiceLocator.Current.GetInstance<GameManagementViewModel>();
         
         public static void Cleanup()
         {

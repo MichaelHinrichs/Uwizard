@@ -5,13 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UwizardWPF.Views"
       mc:Ignorable="d"
-      d:DesignHeight="300" d:DesignWidth="300">
+      d:DesignHeight="720" d:DesignWidth="1080" d:DataContext="{Binding GameManagement, Source={StaticResource Locator}}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding GameCollection}" Grid.RowSpan="2" SelectedItem="{Binding SelectedItem}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn>
@@ -21,13 +26,18 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Game ID" Width="Auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Game Title" />
-                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Size" />
-                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Region" />
-                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Format" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Game ID" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding DisplayName}" Header="Game Title" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Size}" Header="Size" />
+                    <GridViewColumn DisplayMemberBinding="{Binding RegionCode}" Header="Region" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Format}" Header="Format" />
                 </GridView>
             </ListView.View>
         </ListView>
+        <Image Source="{Binding CoverDiscLocation}" DataContext="{Binding SelectedItem}" Grid.Row="0" Grid.Column="1"/>
+        <Image Source="{Binding CoverFrontLocation}" DataContext="{Binding SelectedItem}" Grid.Row="1" Grid.Column="1"/>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding GameTDBClickCommand}">
+            <Image Source="../Resources/GameTDB.png"/>
+        </Button>
     </Grid>
 </UserControl>

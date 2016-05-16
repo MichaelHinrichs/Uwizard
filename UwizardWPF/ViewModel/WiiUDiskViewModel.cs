@@ -23,7 +23,12 @@ namespace UwizardWPF.ViewModel
         public string Description { get; set; }
         public RegionCodeEnum RegionCode { get; set; }
         public string FilePath { get; set; }
-        
+        public bool IsGx2 { get; set; }
+
+        public long Size { get; set; }
+
+        public string Format => IsGx2 ? "GX2" : "WUD";
+
         public WiiUDiskViewModel() { }
 
         public WiiUDiskViewModel(string filePath)
