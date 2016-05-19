@@ -8,36 +8,53 @@
       d:DesignHeight="720" d:DesignWidth="1080" d:DataContext="{Binding GameManagement, Source={StaticResource Locator}}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height=".5*"/>
-        </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding GameCollection}" Grid.RowSpan="2" SelectedItem="{Binding SelectedItem}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Game ID" Width="Auto"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding DisplayName}" Header="Game Title" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Size}" Header="Size" />
-                    <GridViewColumn DisplayMemberBinding="{Binding RegionCode}" Header="Region" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Format}" Header="Format" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Image Source="{Binding CoverDiscLocation}" DataContext="{Binding SelectedItem}" Grid.Row="0" Grid.Column="1"/>
-        <Image Source="{Binding CoverFrontLocation}" DataContext="{Binding SelectedItem}" Grid.Row="1" Grid.Column="1"/>
-        <Button Grid.Row="2" Grid.Column="1" Command="{Binding GameTDBClickCommand}">
-            <Image Source="../Resources/GameTDB.png"/>
-        </Button>
+        <Grid Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
+                <MenuItem Header="Add">
+                    <MenuItem Header="Folder" HorizontalAlignment="Left" Width="140" Command="{Binding AddFolderCommand}"/>
+                </MenuItem>
+            </Menu>
+            <ListView ItemsSource="{Binding GameCollection}" Grid.Row="1" SelectedItem="{Binding SelectedItem}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Game ID" Width="Auto"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding DisplayName}" Header="Game Title" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Size}" Header="Size" />
+                        <GridViewColumn DisplayMemberBinding="{Binding RegionCode}" Header="Region" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Format}" Header="Format" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBox Text="{Binding Description}" DataContext="{Binding SelectedItem}" Grid.Row="2" IsEnabled="False"/>
+        </Grid>
+        <Grid Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="{Binding CoverDiscLocation}" DataContext="{Binding SelectedItem}" Grid.Row="0"/>
+            <Image Source="{Binding CoverFrontLocation}" DataContext="{Binding SelectedItem}" Grid.Row="1"/>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="http:\\www.vbcity.com" TextDecorations="None">
+                    <Image Source="../Resources/GameTDB.png" />
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
     </Grid>
 </UserControl>
