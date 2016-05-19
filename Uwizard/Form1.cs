@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Uwizard {
             string dblst = "\n\nDebug log saved.";
         #endif
 
-        public const int myversion = 114;
+        public const int myversion = 120;
 
         public const char hidekeychar = 'x';
 
@@ -42,10 +43,10 @@ namespace Uwizard {
 
         public static string getVerText(int ver) {
             string tver = ver.ToString();
-            #if DEBUG_BUILD
-                return tver[0] + "." + tver[1] + "." + tver[2] + " DEBUG_BUILD";
-            #else
-                return tver[0] + "." + tver[1] + "." + tver[2];
+#if DEBUG_BUILD
+                return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(3) + " DEBUG_BUILD";
+#else
+            return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(3);
             #endif
         }
 
