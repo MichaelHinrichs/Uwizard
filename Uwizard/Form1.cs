@@ -43,7 +43,7 @@ namespace Uwizard {
 
         public static string getVerText(int ver) {
             string tver = ver.ToString();
-#if DEBUG_BUILD
+#if DEBUG
                 return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(3) + " DEBUG_BUILD";
 #else
             return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(3);
@@ -900,10 +900,13 @@ exsub:      sr.Close();
 
         private void Form1_Load(object sender, EventArgs e) {
             #if DEBUG_BUILD // Use to parse a language file from text to code.
+            if (File.Exists("French Uwizard 2parse.txt"))
+            {
                 System.IO.StreamReader fsr = new System.IO.StreamReader("French Uwizard 2parse.txt");
                 string ret = "";
                 int index = 0;
-                while (!fsr.EndOfStream) {
+                while (!fsr.EndOfStream)
+                {
                     if (index != 0) ret = ret + ", \r\n";
                     ret = ret + "\"" + fsr.ReadLine() + "\" /* " + index + " */ ";
                     index++;
@@ -912,9 +915,10 @@ exsub:      sr.Close();
                 fsr.Close();
                 fsr.Dispose();
                 System.Windows.Forms.Clipboard.SetText(ret);
-                System.IO.File.WriteAllText("frenchcode.txt", ret);//*/
+                System.IO.File.WriteAllText("frenchcode.txt", ret); //*/
                 //this.Close();
-            #endif
+            }
+#endif
 
             string[] cla = Environment.GetCommandLineArgs();
             
