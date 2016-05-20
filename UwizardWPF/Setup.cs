@@ -23,7 +23,7 @@ namespace UwizardWPF
 
         private void RegisterServices(Container container)
         {
-            throw new System.NotImplementedException();
+            container.RegisterSingleton<ISQLiteDatabase, SQLiteDatabase>();
         }
 
         private void RegisterViewModels(Container container)
