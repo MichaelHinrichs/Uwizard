@@ -1,6 +1,4 @@
-﻿using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
-using UwizardWPF.Entities;
+﻿using SimpleInjector;
 using UwizardWPF.Server;
 using UwizardWPF.ViewModel;
 
@@ -10,32 +8,31 @@ namespace UwizardWPF
     {
         public void Register()
         {
-            var container = SimpleIoc.Default;
+            var container = new Container();
             
             DoRegistration(container);
-            ServiceLocator.SetLocatorProvider(() => container);
-            
             RegisterSchema(container.GetInstance<ISQLiteDatabase>());
         }
 
-        protected virtual void DoRegistration(SimpleIoc container)
+        protected virtual void DoRegistration(Container container)
         {
             RegisterModels(container);
             RegisterViewModels(container);
             RegisterServices(container);
         }
 
-        private void RegisterServices(SimpleIoc container)
+        private void RegisterServices(Container container)
         {
             throw new System.NotImplementedException();
         }
 
-        private void RegisterViewModels(SimpleIoc container)
+        private void RegisterViewModels(Container container)
         {
-            throw new System.NotImplementedException();
+            container.Register<MainViewModel>();
+            container.Register<GameManagementViewModel>();
         }
 
-        private void RegisterModels(SimpleIoc container)
+        private void RegisterModels(Container container)
         {
         }
 
