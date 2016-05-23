@@ -7,7 +7,7 @@ namespace UwizardWPF.MVVM
     /// <summary>
     /// A static class to be able to access the container from different classes and resolve diferent objects
     /// </summary>
-    public static class Resolver
+    public class Resolver
     {
         private static IContainer _container;
 

@@ -8,25 +8,25 @@ using SimpleInjector;
 
 namespace UwizardWPF.MVVM
 {
-    public static class ViewFactory
+    public class ViewFactory
     {
         private static readonly Dictionary<Type, Type> TypeDictionary = new Dictionary<Type, Type>();
 
-        public static void Register<TView, TViewModel>(Func<Resolver, TViewModel> func = null)
+        public static void Register<TView, TViewModel>(Func<IContainer, TViewModel> func = null)
             where TView : class
             where TViewModel : ViewModelBase
         {
             TypeDictionary[typeof(TViewModel)] = typeof(TView);
 
-            var container = Resolver.Resolve<Container>();
+            var container = Resolver.Resolve<UwizardContainer>();
             // check if we have DI container
-            if ()
+            if (container != null)
             {
                 // register viewmodel with DI to enable non default vm constructors / service locator
                 if (func == null)
-                    Resolver.Register<TViewModel, TViewModel>();
+                    container.Register<TViewModel, TViewModel>();
                 else
-                    container.Register(func);
+                    container.Register(() => func(container));
             }
         }
 
