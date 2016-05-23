@@ -1,6 +1,10 @@
-﻿using SimpleInjector;
+﻿using AutoMapper;
+using Microsoft.Practices.ServiceLocation;
+using UwizardWPF.Entities;
+using UwizardWPF.MVVM;
 using UwizardWPF.Server;
 using UwizardWPF.ViewModel;
+using Container = SimpleInjector.Container;
 
 namespace UwizardWPF
 {
@@ -12,13 +16,20 @@ namespace UwizardWPF
             
             DoRegistration(container);
             RegisterSchema(container.GetInstance<ISQLiteDatabase>());
+            Resolver.SetContainer(container);
         }
 
         protected virtual void DoRegistration(Container container)
         {
             RegisterModels(container);
             RegisterViewModels(container);
+            RegisterViews(container);
             RegisterServices(container);
+        }
+
+        private void RegisterViews(Container container)
+        {
+            ViewFactory;
         }
 
         private void RegisterServices(Container container)
@@ -38,6 +49,10 @@ namespace UwizardWPF
 
         protected void RegisterSchema(ISQLiteDatabase db)
         {
+            db.Do(connection =>
+            {
+                connection.CreateTable(typeof(WiiUDisk));
+            });
         }
     }
 }

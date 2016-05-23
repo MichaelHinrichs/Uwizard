@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using AutoMapper.Internal;
 using UwizardWPF.Server;
 
 namespace UwizardWPF
@@ -9,5 +10,13 @@ namespace UwizardWPF
     public partial class App : Application
     {
         private ISQLiteDatabase _database;
+        private Setup _setup;
+
+        public App()
+        {
+            _setup = new Setup();
+            
+            _setup.Register();
+        }
     }
 }
