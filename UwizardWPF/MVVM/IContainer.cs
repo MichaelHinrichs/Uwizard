@@ -1,4 +1,4 @@
 ﻿namespace UwizardWPF.MVVM
 {
-    interface IContainer { }
+    public interface IContainer { }
 }
