@@ -16,7 +16,7 @@ namespace UwizardWPF
             
             DoRegistration(container);
             RegisterSchema(container.GetInstance<ISQLiteDatabase>());
-            Resolver.SetContainer(container);
+            Resolver.SetResolver(new UwizardResolver(container));
         }
 
         protected virtual void DoRegistration(Container container)

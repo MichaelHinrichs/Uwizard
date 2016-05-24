@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Controls;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Views;
-using Microsoft.Practices.ServiceLocation;
-using SimpleInjector;
 
 namespace UwizardWPF.MVVM
 {
@@ -12,22 +10,20 @@ namespace UwizardWPF.MVVM
     {
         private static readonly Dictionary<Type, Type> TypeDictionary = new Dictionary<Type, Type>();
 
-        public static void Register<TView, TViewModel>(Func<IContainer, TViewModel> func = null)
+        public static void Register<TView, TViewModel>(Func<IResolver, TViewModel> func = null)
             where TView : class
             where TViewModel : ViewModelBase
         {
             TypeDictionary[typeof(TViewModel)] = typeof(TView);
 
-            var container = Resolver.Resolve<UwizardContainer>();
+            var container = Resolver.Resolve<IContainer>();
             // check if we have DI container
-            if (container != null)
-            {
-                // register viewmodel with DI to enable non default vm constructors / service locator
-                if (func == null)
-                    container.Register<TViewModel, TViewModel>();
-                else
-                    container.Register(() => func(container));
-            }
+            if (container == null) return;
+            // register viewmodel with DI to enable non default vm constructors / service locator
+            if (func == null)
+                container.Register<TViewModel, TViewModel>();
+            else
+                container.Register(func(container.GetResolver()));
         }
 
         /// <summary>
@@ -52,35 +48,14 @@ namespace UwizardWPF.MVVM
             }
 
             object page;
-            IViewModel viewModel;
-            var pageCacheKey = string.Format("{0}:{1}", viewModelType.Name, viewType.Name);
+            var pageCacheKey = $"{viewModelType.Name}:{viewType.Name}";
 
-            if (EnableCache && PageCache.ContainsKey(pageCacheKey))
-            {
-                var cache = PageCache[pageCacheKey];
-                viewModel = cache.Item1;
-                page = cache.Item2;
-            }
-            else
-            {
-                viewModel = (Resolver.Resolve(viewModelType) ?? Activator.CreateInstance(viewModelType)) as IViewModel;
+            var viewModel = (Resolver.Resolve(viewModelType) ?? Activator.CreateInstance(viewModelType)) as ViewModelBase;
+            page = Activator.CreateInstance(viewType, args);
 
-                page = Activator.CreateInstance(viewType, args);
+            initialiser?.Invoke(viewModel, page);
 
-                if (EnableCache)
-                {
-                    PageCache[pageCacheKey] = new Tuple<IViewModel, object>(viewModel, page);
-                }
-            }
-
-            viewModel.NavigationService = Resolver.Resolve<INavigationService>();
-
-            if (initialiser != null)
-            {
-                initialiser(viewModel, page);
-            }
-
-            var pageBindable = page as BindableObject;
+            var pageBindable = page as Page;
             if (pageBindable != null)
             {
                 // forcing break reference on viewmodel in order to allow initializer to do its work
@@ -88,11 +63,6 @@ namespace UwizardWPF.MVVM
                 pageBindable.BindingContext = viewModel;
             }
             var formsPage = page as Page;
-            if (formsPage != null)
-            {
-                viewModel.Navigation = new ViewModelNavigation(formsPage.Navigation);
-            }
-
 
             return page;
         }

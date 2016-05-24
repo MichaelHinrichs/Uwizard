@@ -129,10 +129,11 @@
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="MVVM\IContainer.cs" />
-    <Compile Include="MVVM\IContainerMapper.cs" />
+    <Compile Include="MVVM\IResolver.cs" />
     <Compile Include="MVVM\Resolver.cs" />
     <Compile Include="MVVM\SimpleInjectorServiceLocatorAdapter.cs" />
     <Compile Include="MVVM\UwizardContainer.cs" />
+    <Compile Include="MVVM\UwizardResolver.cs" />
     <Compile Include="MVVM\ViewFactory.cs" />
     <Compile Include="Resources\KeyHashes\vWiiResources.Designer.cs">
       <DependentUpon>vWiiResources.resx</DependentUpon>

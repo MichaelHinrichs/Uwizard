@@ -6,31 +6,54 @@ namespace UwizardWPF.MVVM
 {
     public class UwizardContainer : IContainer
     {
-        private Container _container;
+        private readonly Container _container;
+        private readonly IResolver _resolver;
 
         public UwizardContainer(Container container)
         {
             _container = container;
+            _resolver = new UwizardResolver(container);
         }
 
-        public T GetInstance<T>() where T : class
+        public IResolver GetResolver()
         {
-            return _container.GetInstance<T>();
+            return _resolver;
         }
 
-        public object GetInstance(Type type)
+        public IContainer Register<T>(T instance) where T : class
         {
-            return _container.GetInstance(type);
+            _container.RegisterSingleton(instance);
+            return this;
         }
 
-        public IEnumerable<T> GetAllInstances<T>() where T : class
+        public IContainer Register<T, TImpl>() where T : class where TImpl : class, T
         {
-            return _container.GetAllInstances<T>();
+            _container.Register<T, TImpl>();
+            return this;
         }
 
-        public IEnumerable<object> GetAllInstances(Type type)
+        public IContainer RegisterSingle<T, TImpl>() where T : class where TImpl : class, T
         {
-            return _container.GetAllInstances(type);
+            _container.RegisterSingleton<T, TImpl>();
+            return this;
+        }
+
+        public IContainer Register<T>(Type type) where T : class
+        {
+            _container.Register(typeof(T), type);
+            return this;
+        }
+
+        public IContainer Register(Type type, Type impl)
+        {
+            _container.Register(type, impl);
+            return this;
+        }
+
+        public IContainer Register<T>(Func<IResolver, T> func) where T : class
+        {
+            _container.Register(()=>func(_resolver));
+            return this;
         }
     }
 }
