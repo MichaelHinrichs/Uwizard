@@ -18,7 +18,7 @@ namespace UwizardWPF.ViewModel
         public MainViewModel()
         {
             _tabs = new ObservableCollection<TabViewModel>();
-            Tabs.Add(new GameManagementViewModel("Games"));
+            Tabs.Add(new GameManagementViewModel());
         }
     }
 }

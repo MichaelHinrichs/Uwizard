@@ -4,6 +4,7 @@ using UwizardWPF.Entities;
 using UwizardWPF.MVVM;
 using UwizardWPF.Server;
 using UwizardWPF.ViewModel;
+using UwizardWPF.Views;
 using Container = SimpleInjector.Container;
 
 namespace UwizardWPF
@@ -13,23 +14,24 @@ namespace UwizardWPF
         public void Register()
         {
             var container = new Container();
-            
+            container.RegisterSingleton<IContainer, UwizardContainer>();
             DoRegistration(container);
-            RegisterSchema(container.GetInstance<ISQLiteDatabase>());
             Resolver.SetResolver(new UwizardResolver(container));
+            RegisterViews(container);
+            RegisterSchema(container.GetInstance<ISQLiteDatabase>());
         }
 
         protected virtual void DoRegistration(Container container)
         {
             RegisterModels(container);
             RegisterViewModels(container);
-            RegisterViews(container);
             RegisterServices(container);
         }
 
         private void RegisterViews(Container container)
         {
-            ViewFactory;
+            ViewFactory.Register<MainWindow, MainViewModel>();
+            ViewFactory.Register<GameManagementView, GameManagementViewModel>();
         }
 
         private void RegisterServices(Container container)

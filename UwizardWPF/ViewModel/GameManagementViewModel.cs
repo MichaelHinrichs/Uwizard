@@ -72,8 +72,9 @@ namespace UwizardWPF.ViewModel
             throw new NotImplementedException();
         }
 
-        public GameManagementViewModel(string header) : base(header)
+        public GameManagementViewModel()
         {
+            Header = "Games";
             _gameCollection = new ObservableCollection<WiiUDiskViewModel>();
         }
     }

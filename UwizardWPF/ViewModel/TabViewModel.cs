@@ -5,11 +5,12 @@ namespace UwizardWPF.ViewModel
 {
     public class TabViewModel : ViewModelBase
     {
-        public string Header { get; }
+        private string _header;
 
-        protected TabViewModel(string header)
+        public string Header
         {
-            Header = header;
+            get { return _header; }
+            set { Set(ref _header, value); }
         }
     }
 }

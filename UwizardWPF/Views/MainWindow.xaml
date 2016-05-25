@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:UwizardWPF.ViewModel"
         xmlns:views="clr-namespace:UwizardWPF.Views"
-        DataContext="{Binding Main, Source={StaticResource Locator}}"
         mc:Ignorable="d"
         Title="UWizard Game Manager" Height="Auto" Width="Auto">
     <Grid>

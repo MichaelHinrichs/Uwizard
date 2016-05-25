@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Views;
 
 namespace UwizardWPF.MVVM
 {
@@ -16,14 +15,14 @@ namespace UwizardWPF.MVVM
         {
             TypeDictionary[typeof(TViewModel)] = typeof(TView);
 
-            var container = Resolver.Resolve<IContainer>();
-            // check if we have DI container
-            if (container == null) return;
-            // register viewmodel with DI to enable non default vm constructors / service locator
-            if (func == null)
-                container.Register<TViewModel, TViewModel>();
-            else
-                container.Register(func(container.GetResolver()));
+            //var container = Resolver.Resolve<IContainer>();
+            //// check if we have DI container
+            //if (container == null) return;
+            //// register viewmodel with DI to enable non default vm constructors / service locator
+            //if (func == null)
+            //    container.Register<TViewModel, TViewModel>();
+            //else
+            //    container.Register(func(container.GetResolver()));
         }
 
         /// <summary>
@@ -46,12 +45,10 @@ namespace UwizardWPF.MVVM
             {
                 throw new InvalidOperationException("Unknown View for ViewModel");
             }
-
-            object page;
-            var pageCacheKey = $"{viewModelType.Name}:{viewType.Name}";
+            
 
             var viewModel = (Resolver.Resolve(viewModelType) ?? Activator.CreateInstance(viewModelType)) as ViewModelBase;
-            page = Activator.CreateInstance(viewType, args);
+            var page = Activator.CreateInstance(viewType, args);
 
             initialiser?.Invoke(viewModel, page);
 
@@ -59,10 +56,9 @@ namespace UwizardWPF.MVVM
             if (pageBindable != null)
             {
                 // forcing break reference on viewmodel in order to allow initializer to do its work
-                pageBindable.BindingContext = null;
-                pageBindable.BindingContext = viewModel;
+                pageBindable.DataContext = null;
+                pageBindable.DataContext = viewModel;
             }
-            var formsPage = page as Page;
 
             return page;
         }
@@ -77,14 +73,11 @@ namespace UwizardWPF.MVVM
         /// <returns>Page for the ViewModel.</returns>
         /// <exception cref="System.InvalidOperationException">Unknown View for ViewModel.</exception>
         public static object CreatePage<TViewModel, TPage>(Action<TViewModel, TPage> initialiser = null, params object[] args)
-            where TViewModel : class, IViewModel
+            where TViewModel : ViewModelBase
         {
             Action<object, object> i = (o1, o2) =>
             {
-                if (initialiser != null)
-                {
-                    initialiser((TViewModel)o1, (TPage)o2);
-                }
+                initialiser?.Invoke((TViewModel)o1, (TPage)o2);
             };
 
             return CreatePage(typeof(TViewModel), i, args);
