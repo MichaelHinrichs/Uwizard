@@ -1,0 +1,12 @@
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\bin\Debug\Uwizard.exe.config
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.csprojResolveAssemblyReference.cache
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.AboutBox1.resources
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.Form1.resources
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.LangSel.resources
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.Properties.Resources.resources
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.csproj.GenerateResource.Cache
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\bin\Debug\Uwizard.exe
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\bin\Debug\Uwizard.pdb
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\bin\Debug\WindowsBase.dll
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.exe
+C:\Users\smb12\OneDrive\Documents\GitHub\Uwizard\Uwizard\obj\Debug\Uwizard.pdb
