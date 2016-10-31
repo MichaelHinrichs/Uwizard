@@ -2477,6 +2477,25 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
             sbox.Dispose();
         }
 
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbox = new FolderBrowserDialog();
+            SaveFileDialog sbox = new SaveFileDialog();
+            fbox.Description = uwiz_langtext[157]; // "Select a folder to pack into a SARC archive."
+            fbox.SelectedPath = Environment.CurrentDirectory;
+            if (fbox.ShowDialog() == DialogResult.Cancel) goto exsub;
+            sbox.Filter = uwiz_langtext[155]; // "SARC Archives|*.sarc|All Files|*.*"
+            sbox.InitialDirectory = Environment.CurrentDirectory;
+            sbox.FileName = System.IO.Path.GetFileName(fbox.SelectedPath);
+            if (sbox.ShowDialog() == DialogResult.Cancel) goto exsub;
+
+            if (!SARC.packPack(fbox.SelectedPath, sbox.FileName))
+                MessageBox.Show(uwiz_langtext[158], uwiz_langtext[34]); // "Error packing SARC archive!"
+
+            exsub:
+            fbox.Dispose();
+            sbox.Dispose();
+        }
     }
 
     public struct point3d {
