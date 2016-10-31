@@ -864,7 +864,7 @@ namespace Uwizard {
             this.arc_extractsarc.Name = "arc_extractsarc";
             this.arc_extractsarc.Size = new System.Drawing.Size(244, 23);
             this.arc_extractsarc.TabIndex = 3;
-            this.arc_extractsarc.Text = "Extract SARC";
+            this.arc_extractsarc.Text = "Extract SARC and PACK";
             this.toolTip1.SetToolTip(this.arc_extractsarc, "Extracts all the files within a SARC archive.");
             this.arc_extractsarc.UseVisualStyleBackColor = true;
             this.arc_extractsarc.Click += new System.EventHandler(this.arc_extractsarc_Click);

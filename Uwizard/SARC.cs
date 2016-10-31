@@ -247,7 +247,8 @@ namespace Uwizard
             for (int c = 0; c < indir_files.Length; c++)
             {
                 string realname = indir_files[c];
-                string filename = indir_files[c].Replace(indir + System.IO.Path.DirectorySeparatorChar.ToString(), "");
+                string filenameD = indir_files[c].Replace(indir + System.IO.Path.DirectorySeparatorChar.ToString(), "");
+                string filename = filenameD.Replace("\\", "/");
 
                 filesize = getfilesize(realname);
                 if (filesize % padding > 0) filesize += (padding - (filesize % padding));

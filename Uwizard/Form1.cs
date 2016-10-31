@@ -2322,7 +2322,7 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
 
         private void arc_extractsarc_Click(object sender, EventArgs e) {
             OpenFileDialog obox = new OpenFileDialog();
-            obox.Filter = uwiz_langtext[155]; // "SARC Archives|*.sarc|All Files|*.*"
+            obox.Filter = "SARC Archives|*.sarc;*.pack|All Files|*.*"; // "SARC Archives|*.sarc;*.pack|All Files|*.*"
             if (obox.ShowDialog() == DialogResult.Cancel) goto exsub;
 
             if (!SARC.extract(obox.FileName, obox.FileName + "_extracted"))
@@ -2335,10 +2335,8 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
         }
 
         private void arc_createsarc_Click(object sender, EventArgs e) {
-            FolderBrowserDialog fbox = new FolderBrowserDialog();
+            FolderSelectDialog fbox = new FolderSelectDialog();
             SaveFileDialog sbox = new SaveFileDialog();
-            fbox.Description = uwiz_langtext[157]; // "Select a folder to pack into a SARC archive."
-            fbox.SelectedPath = Environment.CurrentDirectory;
             if (fbox.ShowDialog() == DialogResult.Cancel) goto exsub;
             sbox.Filter = uwiz_langtext[155]; // "SARC Archives|*.sarc|All Files|*.*"
             sbox.InitialDirectory = Environment.CurrentDirectory;
@@ -2453,10 +2451,8 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
         }
 
         private void arc_pac_com_sarcszs_Click(object sender, EventArgs e) {
-            FolderBrowserDialog fbox = new FolderBrowserDialog();
+            FolderSelectDialog fbox = new FolderSelectDialog();
             SaveFileDialog sbox = new SaveFileDialog();
-            fbox.Description = uwiz_langtext[163];
-            fbox.SelectedPath = Environment.CurrentDirectory;
             if (fbox.ShowDialog() == DialogResult.Cancel) goto exsub;
             sbox.Filter = uwiz_langtext[159]; // "Yaz0 Compressed Files|*.szs|All Files|*.*"
             sbox.InitialDirectory = Environment.CurrentDirectory;
@@ -2479,12 +2475,10 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
 
         private void button19_Click_1(object sender, EventArgs e)
         {
-            FolderBrowserDialog fbox = new FolderBrowserDialog();
+            FolderSelectDialog fbox = new FolderSelectDialog();
             SaveFileDialog sbox = new SaveFileDialog();
-            fbox.Description = uwiz_langtext[157]; // "Select a folder to pack into a SARC archive."
-            fbox.SelectedPath = Environment.CurrentDirectory;
             if (fbox.ShowDialog() == DialogResult.Cancel) goto exsub;
-            sbox.Filter = uwiz_langtext[155]; // "SARC Archives|*.sarc|All Files|*.*"
+            sbox.Filter = "Pack Archives|*.sarc|All Files|*.*"; // "SARC Archives|*.sarc|All Files|*.*"
             sbox.InitialDirectory = Environment.CurrentDirectory;
             sbox.FileName = System.IO.Path.GetFileName(fbox.SelectedPath);
             if (sbox.ShowDialog() == DialogResult.Cancel) goto exsub;
