@@ -2378,7 +2378,7 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
             #if DEBUG_BUILD
             #else
                 yaz0enc.StartInfo.CreateNoWindow = true;
-                yaz0enc.StartInfo.UseShellExecute = false;
+                yaz0enc.StartInfo.UseShellExecute = true;
             #endif
             yaz0enc.Start();
             yaz0enc.WaitForExit();
