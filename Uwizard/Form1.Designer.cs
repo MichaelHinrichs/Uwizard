@@ -32,6 +32,7 @@ namespace Uwizard {
             this.wudlist_clearfolers = new System.Windows.Forms.Button();
             this.wudlist_addfolder = new System.Windows.Forms.Button();
             this.wudlist = new System.Windows.Forms.ListBox();
+            this.gcover = new System.Windows.Forms.PictureBox();
             this.button13 = new System.Windows.Forms.Button();
             this.show3d = new System.Windows.Forms.CheckBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@ namespace Uwizard {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.gid = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.duout = new System.Windows.Forms.TextBox();
             this.page_nus = new System.Windows.Forms.TabPage();
             this.nus_clearlist = new System.Windows.Forms.Button();
@@ -75,6 +77,8 @@ namespace Uwizard {
             this.bfstm_dirfiles = new System.Windows.Forms.ListBox();
             this.bfstm_convertbfstm2wav_notlist = new System.Windows.Forms.Button();
             this.page_szsmanager = new System.Windows.Forms.TabPage();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button19 = new System.Windows.Forms.Button();
             this.arc_extractszs = new System.Windows.Forms.Button();
@@ -104,6 +108,7 @@ namespace Uwizard {
             this.ckey_sha1status = new System.Windows.Forms.Label();
             this.ckey_prev = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.rThread = new System.ComponentModel.BackgroundWorker();
@@ -117,20 +122,17 @@ namespace Uwizard {
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button18 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.gcover = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button21 = new System.Windows.Forms.Button();
             this.maintabstrip.SuspendLayout();
             this.page_wudmanager.SuspendLayout();
             this.wud_splitter.Panel1.SuspendLayout();
             this.wud_splitter.Panel2.SuspendLayout();
             this.wud_splitter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcover)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.page_nus.SuspendLayout();
             this.page_bfstmmanager.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -143,13 +145,11 @@ namespace Uwizard {
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcover)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // maintabstrip
@@ -261,6 +261,21 @@ namespace Uwizard {
             this.wudlist.Size = new System.Drawing.Size(285, 173);
             this.wudlist.TabIndex = 0;
             this.wudlist.SelectedIndexChanged += new System.EventHandler(this.wudlist_SelectedIndexChanged);
+            // 
+            // gcover
+            // 
+            this.gcover.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gcover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcover.Location = new System.Drawing.Point(0, 0);
+            this.gcover.Name = "gcover";
+            this.gcover.Size = new System.Drawing.Size(285, 197);
+            this.gcover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gcover.TabIndex = 0;
+            this.gcover.TabStop = false;
+            this.gcover.Paint += new System.Windows.Forms.PaintEventHandler(this.gcover_Paint);
+            this.gcover.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseDown);
+            this.gcover.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseMove);
+            this.gcover.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseUp);
             // 
             // button13
             // 
@@ -455,6 +470,19 @@ namespace Uwizard {
             this.button6.Text = "Open Wii U Game";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::Uwizard.Properties.Resources.GameTDB;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 448);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(285, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // duout
             // 
@@ -774,11 +802,36 @@ namespace Uwizard {
             this.page_szsmanager.Text = "Archive Manager";
             this.page_szsmanager.UseVisualStyleBackColor = true;
             // 
+            // button21
+            // 
+            this.button21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button21.Location = new System.Drawing.Point(127, 366);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(244, 23);
+            this.button21.TabIndex = 10;
+            this.button21.Text = "(QUICK) Pack And Compress";
+            this.toolTip1.SetToolTip(this.button21, "Extracts all the files within a SARC archive.");
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button20
+            // 
+            this.button20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button20.Location = new System.Drawing.Point(127, 337);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(244, 23);
+            this.button20.TabIndex = 9;
+            this.button20.Text = "Quick SZS";
+            this.toolTip1.SetToolTip(this.button20, "Compiles all files within a folder into a SARC srchive, then compresses the archi" +
+        "ve with Yaz0.");
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Hexadecimal = true;
             this.numericUpDown1.Increment = new decimal(new int[] {
-            256,
+            4096,
             0,
             0,
             0});
@@ -798,7 +851,7 @@ namespace Uwizard {
             this.numericUpDown1.Size = new System.Drawing.Size(56, 20);
             this.numericUpDown1.TabIndex = 8;
             this.numericUpDown1.Value = new decimal(new int[] {
-            1024,
+            16384,
             0,
             0,
             0});
@@ -1147,6 +1200,19 @@ namespace Uwizard {
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Uwizard.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(491, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -1263,72 +1329,6 @@ namespace Uwizard {
             this.button18.Text = "Convert a BFSTM to a WAV";
             this.button18.UseVisualStyleBackColor = true;
             // 
-            // button20
-            // 
-            this.button20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button20.Location = new System.Drawing.Point(127, 337);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(244, 23);
-            this.button20.TabIndex = 9;
-            this.button20.Text = "Quick SZS";
-            this.toolTip1.SetToolTip(this.button20, "Compiles all files within a folder into a SARC srchive, then compresses the archi" +
-        "ve with Yaz0.");
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // gcover
-            // 
-            this.gcover.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gcover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcover.Location = new System.Drawing.Point(0, 0);
-            this.gcover.Name = "gcover";
-            this.gcover.Size = new System.Drawing.Size(285, 197);
-            this.gcover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gcover.TabIndex = 0;
-            this.gcover.TabStop = false;
-            this.gcover.Paint += new System.Windows.Forms.PaintEventHandler(this.gcover_Paint);
-            this.gcover.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseDown);
-            this.gcover.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseMove);
-            this.gcover.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseUp);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::Uwizard.Properties.Resources.GameTDB;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 448);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(285, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Uwizard.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 221);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(491, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // button21
-            // 
-            this.button21.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button21.Location = new System.Drawing.Point(127, 366);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(244, 23);
-            this.button21.TabIndex = 10;
-            this.button21.Text = "(QUICK) Pack And Compress";
-            this.toolTip1.SetToolTip(this.button21, "Extracts all the files within a SARC archive.");
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1347,6 +1347,7 @@ namespace Uwizard {
             this.wud_splitter.Panel1.ResumeLayout(false);
             this.wud_splitter.Panel2.ResumeLayout(false);
             this.wud_splitter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcover)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -1355,6 +1356,7 @@ namespace Uwizard {
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.page_nus.ResumeLayout(false);
             this.page_nus.PerformLayout();
             this.page_bfstmmanager.ResumeLayout(false);
@@ -1373,14 +1375,12 @@ namespace Uwizard {
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcover)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
