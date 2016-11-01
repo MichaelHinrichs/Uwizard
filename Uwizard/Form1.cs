@@ -32,6 +32,7 @@ namespace Uwizard {
         #endif
 
         public const int myversion = 114;
+        public int adjPadding = 0x400;
 
         public const char hidekeychar = 'x';
 
@@ -2386,6 +2387,24 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
             System.IO.File.Move(infile + ".yaz0", outfile);
             return true;
         }
+        public static bool fastszs(string infile, string outfile)
+        {
+            gzip.decompress(Uwizard.Properties.Resources.yaz0enc, "yaz0fast.exe");
+            System.Diagnostics.Process yaz0enc = new System.Diagnostics.Process();
+            yaz0enc.StartInfo.Arguments = "\"" + infile + "\"";
+            yaz0enc.StartInfo.FileName = System.IO.Path.GetFullPath("yaz0fast.exe");
+            #if DEBUG_BUILD
+            #else
+            yaz0enc.StartInfo.CreateNoWindow = true;
+            yaz0enc.StartInfo.UseShellExecute = false;
+            #endif
+            yaz0enc.Start();
+            yaz0enc.WaitForExit();
+            System.IO.File.Delete("yaz0fast.exe");
+            if (!System.IO.File.Exists(infile + ".yaz0")) return false;
+            System.IO.File.Move(infile + ".yaz0", outfile);
+            return true;
+        }
 
         private void arc_extractszs_Click(object sender, EventArgs e) {
             OpenFileDialog obox = new OpenFileDialog();
@@ -2483,8 +2502,58 @@ listiscorrupt:  msgbox("This title key list is corrupt.");
             sbox.FileName = System.IO.Path.GetFileName(fbox.SelectedPath);
             if (sbox.ShowDialog() == DialogResult.Cancel) goto exsub;
 
-            if (!SARC.packPack(fbox.SelectedPath, sbox.FileName))
+            if (!SARC.packPack(fbox.SelectedPath, sbox.FileName, (int)numericUpDown1.Value))
                 MessageBox.Show(uwiz_langtext[158], uwiz_langtext[34]); // "Error packing SARC archive!"
+
+            exsub:
+            fbox.Dispose();
+            sbox.Dispose();
+        }
+        public void numnumericUpDown1(object sender, EventArgs e)
+        {
+            numericUpDown1 = new NumericUpDown();
+        }
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
+            adjPadding = (int)numericUpDown1.Value;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog obox = new OpenFileDialog();
+            SaveFileDialog sbox = new SaveFileDialog();
+            obox.Filter = uwiz_langtext[152]; // "All Files|*.*"
+            if (obox.ShowDialog() == DialogResult.Cancel) goto exsub;
+
+            sbox.Filter = uwiz_langtext[159]; // "Yaz0 Compressed Files|*.szs|All Files|*.*"
+            if (sbox.ShowDialog() == DialogResult.Cancel) goto exsub;
+
+            if (!fastszs(obox.FileName, sbox.FileName))
+                MessageBox.Show(uwiz_langtext[162], uwiz_langtext[34]); // "Error compressing SZS file!"
+            exsub:
+            obox.Dispose();
+            sbox.Dispose();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            FolderSelectDialog fbox = new FolderSelectDialog();
+            SaveFileDialog sbox = new SaveFileDialog();
+            if (fbox.ShowDialog() == DialogResult.Cancel) goto exsub;
+            sbox.Filter = uwiz_langtext[159]; // "Yaz0 Compressed Files|*.szs|All Files|*.*"
+            sbox.InitialDirectory = Environment.CurrentDirectory;
+            sbox.FileName = System.IO.Path.GetFileName(fbox.SelectedPath);
+            if (sbox.ShowDialog() == DialogResult.Cancel) goto exsub;
+
+            string tfp = System.IO.Path.GetTempFileName();
+            System.IO.File.Delete(tfp);
+
+            if (!SARC.pack(fbox.SelectedPath, tfp))
+                MessageBox.Show(uwiz_langtext[158], uwiz_langtext[34]); // "Error packing SARC archive!"
+
+            if (!fastszs(tfp, sbox.FileName))
+                MessageBox.Show(uwiz_langtext[162], uwiz_langtext[34]); // "Error compressing SZS file!"
 
             exsub:
             fbox.Dispose();

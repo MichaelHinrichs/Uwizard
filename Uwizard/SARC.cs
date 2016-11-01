@@ -199,9 +199,9 @@ namespace Uwizard
         {
             return pack(indir, outfile, 0x2000);
         }
-        public static bool packPack(string indir, string outfile)
+        public static bool packPack(string indir, string outfile, int padding)
         {
-            return pack(indir, outfile, 0x4000);
+            return pack(indir, outfile, (uint)padding);
         }
 
         private static uint calchash(string name)
