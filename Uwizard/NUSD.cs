@@ -635,25 +635,42 @@ namespace Uwizard {
 
                     if (useLocalFiles && File.Exists(Path.Combine(outputDir, tmd.Contents[i].ContentID.ToString("x8")))) {
                         fireDebug("   + Using Local File, Skipping...");
-                        bytesdone_total += tmd.Contents[i].Size;
-                        pbt.Value = (int)(bytesdone_total*(ulong)pbt.Maximum/bytestotal);
-                        pbs.Value = pbs.Maximum;
-                        continue;
+                        string fName = Path.Combine(outputDir, tmd.Contents[i].ContentID.ToString("x8"));
+                        if (tmd.Contents[i].Size == (ulong)(new FileInfo(fName)).Length)
+                        {
+                            bytesdone_total += tmd.Contents[i].Size;
+                            pbt.Value = (int)(bytesdone_total * (ulong)pbt.Maximum / bytestotal);
+                            pbs.Value = pbs.Maximum;
+                            continue;
+                        }
+                        fireDebug("   + Local File improper size, redownloading");
                     }
 
                     try {
-                        isdownloading = true;
-                        wcNus.DownloadFileAsync(new Uri(titleUrl + tmd.Contents[i].ContentID.ToString("x8")), Path.Combine(outputDir, tmd.Contents[i].ContentID.ToString("x8")));
+                        bool properlyDownloaded = false;
+                        while (!properlyDownloaded) {
+                            isdownloading = true;
+                            string fName = Path.Combine(outputDir, tmd.Contents[i].ContentID.ToString("x8"));
+                            wcNus.DownloadFileAsync(new Uri(titleUrl + tmd.Contents[i].ContentID.ToString("x8")), fName);
 
-                        while (isdownloading) {
-                            if (cancelnusd) {
-                                wcNus.CancelAsync();
-                                pbs.Value = 0;
-                                pbt.Value = 0;
-                                while (isdownloading) { }
-                                System.IO.File.Delete(Path.Combine(outputDir, tmd.Contents[i].ContentID.ToString("x8")));
-                                throw new Exception("The download operation has been canceled.");
+                            while (isdownloading) {
+                                if (cancelnusd) {
+                                    wcNus.CancelAsync();
+                                    pbs.Value = 0;
+                                    pbt.Value = 0;
+                                    while (isdownloading) { }
+                                    System.IO.File.Delete(Path.Combine(outputDir, tmd.Contents[i].ContentID.ToString("x8")));
+                                    throw new Exception("The download operation has been canceled.");
+                                }
                             }
+
+                            if (cancelnusd)
+                                break;
+
+                            if (tmd.Contents[i].Size == (ulong)(new FileInfo(fName)).Length)
+                                properlyDownloaded = true;
+                            else
+                                fireDebug("   + Improper file size detected, restarting");
                         }
                         bytesdone_total += tmd.Contents[i].Size;
                         pbt.Value = (int) (bytesdone_total*(ulong)pbt.Maximum/bytestotal);
