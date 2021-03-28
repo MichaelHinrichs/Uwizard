@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GameTBDAddUpdate" xml:space="preserve">
+    <value>{0} {0:jeu ajouté:jeux ajoutés} et {0:jeu:jeux} mis à jour depuis gametdb.com</value>
+    <comment>028-31, {0} is the number of games added, {1} is the number of games updated</comment>
+  </data>
+  <data name="AUS" xml:space="preserve">
+    <value>PAL: Australie</value>
+    <comment>014</comment>
+  </data>
+  <data name="CommonKeyInvalid" xml:space="preserve">
+    <value>La common key est invalide.</value>
+    <comment>021</comment>
+  </data>
+  <data name="CommonKeyRequired" xml:space="preserve">
+    <value>The common key is required to decrypt the data.</value>
+    <comment>054</comment>
+  </data>
+  <data name="DiskTitleKeyInvalid" xml:space="preserve">
+    <value>La disc title key est invalide.</value>
+    <comment>020</comment>
+  </data>
+  <data name="DiskTitleKeyRequired" xml:space="preserve">
+    <value>La disc title key est requise pour décrypter les données.</value>
+    <comment>018</comment>
+  </data>
+  <data name="EnterGameName" xml:space="preserve">
+    <value>Entrer le Nom du Jeu</value>
+    <comment>011</comment>
+  </data>
+  <data name="ErrorExtracting" xml:space="preserve">
+    <value>Erreur Durant l’Extraction des Fichiers!</value>
+    <comment>023</comment>
+  </data>
+  <data name="EUR" xml:space="preserve">
+    <value>PAL: Europe</value>
+    <comment>012</comment>
+  </data>
+  <data name="WiiUGameFileTypes" xml:space="preserve">
+    <value>Jeux Wii U|*.wud|Tous les fichiers|*.*</value>
+    <comment>017</comment>
+  </data>
+  <data name="GameListUpToDate" xml:space="preserve">
+    <value>La liste de jeux est à jour.</value>
+    <comment>027</comment>
+  </data>
+  <data name="GameNotInDatabase" xml:space="preserve">
+    <value>Ce jeu n’est pas dans la base de données. S’il vous plaît entrer un nom:</value>
+    <comment>010</comment>
+  </data>
+  <data name="InvalidHex" xml:space="preserve">
+    <value>Caractère Hex Invalide</value>
+    <comment>005</comment>
+  </data>
+  <data name="InvalidWiiUDisk" xml:space="preserve">
+    <value>Fichier image de disque Wii U invalide. Peut-être avez-vous oublié de le décompresser?</value>
+    <comment>008</comment>
+  </data>
+  <data name="JPN" xml:space="preserve">
+    <value>NTSC: Japon</value>
+    <comment>013</comment>
+  </data>
+  <data name="NoKey" xml:space="preserve">
+    <value>Aucune Clé Entrée</value>
+    <comment>002</comment>
+  </data>
+  <data name="NoSHA1" xml:space="preserve">
+    <value>Aucun SHA1 Disponible</value>
+    <comment>003</comment>
+  </data>
+  <data name="Reading" xml:space="preserve">
+    <value>Lecture</value>
+    <comment>007</comment>
+  </data>
+  <data name="SearchingDatabase" xml:space="preserve">
+    <value>Recherche dans la base de données...</value>
+    <comment>009</comment>
+  </data>
+  <data name="SearchingForCovers" xml:space="preserve">
+    <value>Recherche dans GameTDB pour des covers...</value>
+    <comment>016</comment>
+  </data>
+  <data name="SelectSaveLocation" xml:space="preserve">
+    <value>Sélectionner où sauvegarder les fichiers extraits.</value>
+    <comment>022</comment>
+  </data>
+  <data name="SettingsMissing" xml:space="preserve">
+    <value>Le fichier de configuration est manquant! Les paramètres et les clés systèmes sont perdues.</value>
+    <comment>004</comment>
+  </data>
+  <data name="SHA1Correct" xml:space="preserve">
+    <value>Vérifié correct par SHA1</value>
+    <comment>000</comment>
+  </data>
+  <data name="SHA1Incorrect" xml:space="preserve">
+    <value>Verifié Incorrect par SHA1</value>
+    <comment>001</comment>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Uwizard a bien été mis à jour à la version {0}</value>
+    <comment>025, {0} is version number</comment>
+  </data>
+  <data name="UpdatedWithError" xml:space="preserve">
+    <value>Uwizard a été mis à jour à la version {0}, mais dû à une erreur durant l’opération, certaine de vos données peuvent avoir été endommagées.</value>
+    <comment>026, {0} is version number</comment>
+  </data>
+  <data name="USA" xml:space="preserve">
+    <value>NTSC: Amérique du Nord</value>
+    <comment>015</comment>
+  </data>
+  <data name="VersionDownloadError" xml:space="preserve">
+    <value>Erreur lors du téléchargement depuis wiiubrew.net. Mise à jour annulée.</value>
+    <comment>032</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About Uwizard</value>
+    <comment>101</comment>
+  </data>
+  <data name="AllFileType" xml:space="preserve">
+    <value>All Files|*.*</value>
+    <comment>152</comment>
+  </data>
+  <data name="ArchiveManager" xml:space="preserve">
+    <value>Archive Manager</value>
+    <comment>059</comment>
+  </data>
+  <data name="BinaryFileType" xml:space="preserve">
+    <value>Binary &amp; Text Files|*.bin;*.txt</value>
+    <comment>150</comment>
+  </data>
+  <data name="ClearList" xml:space="preserve">
+    <value>Clear List</value>
+    <comment>074</comment>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Coming soon!</value>
+    <comment>087</comment>
+  </data>
+  <data name="CommonKey" xml:space="preserve">
+    <value>Wii U Common Key</value>
+    <comment>102</comment>
+  </data>
+  <data name="ConfirmUpdate" xml:space="preserve">
+    <value>Une nouvelle version de Uwizard est disponible. Voulez-vous mettre à jour de la version {0} vers {1} ?</value>
+    <comment>035, {0} is the old version number, {1} is the new number</comment>
+  </data>
+  <data name="ContentCount" xml:space="preserve">
+    <value>{0} Contents</value>
+    <comment>137</comment>
+  </data>
+  <data name="ContentDecrypt" xml:space="preserve">
+    <value>Decrypt Contents</value>
+    <comment>079</comment>
+  </data>
+  <data name="ContentDownloadFailed" xml:space="preserve">
+    <value>Downloading Content #{0} of {1} failed...</value>
+    <comment>146</comment>
+  </data>
+  <data name="ContentDownloadTo" xml:space="preserve">
+    <value>Downloading Content #{0} of {1}... ({2} bytes) to</value>
+    <comment>143</comment>
+  </data>
+  <data name="ConvertError" xml:space="preserve">
+    <value>Error converting</value>
+    <comment>051</comment>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright 2015 Mysteriosoft</value>
+    <comment>126</comment>
+  </data>
+  <data name="CorruptVersionFile" xml:space="preserve">
+    <value>Version du fichier corrompue sur wiiubrew.net!</value>
+    <comment>033</comment>
+  </data>
+  <data name="CreateFolderList" xml:space="preserve">
+    <value>Clear Folder List</value>
+    <comment>062</comment>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Credits:\r\n  Mr. Mysterio - Programmer of Uwizard\r\n  Crediar - Programmer of DiscU and CDecrypt\r\n  MasterF0x - Distributor of BFSTM Decoder\r\n  GameTDB - Game Covers\r\n  VinsCool, capito27, phanteon, send0r - Translation\r\n\r\nChangeLog:\r\n  v1.1.3\r\n    German language added. \r\n    Spanish language added.\r\n    Minor bug fixes.\r\n\r\n  v1.1.2\r\n    BFWAV decoder added.\r\n    MP3 compiler added.\r\n\r\n  v1.1.1\r\n    SZS and SARC archive management added.\r\n    BFSTM multi-select and optional channel separation added.\r\n    Command line interface added.\r\n    More NUS titles added to the easy-access list.\r\n    Minor bug fixes.\r\n    \r\n  v1.1.0\r\n    NUS Downloader U added.\r\n    BFSTM decoder added.\r\n    List selection of Wii U games added.\r\n    Minor bug fixes.\r\n    \r\n  v1.0.1\r\n    Option to hide keys added.\r\n    Minor bug fixes.\r\n\r\n  v1.0.0\r\n    Program Creation</value>
+    <comment>147</comment>
+  </data>
+  <data name="Decrypting" xml:space="preserve">
+    <value>Décryptage des données...</value>
+    <comment>041</comment>
+  </data>
+  <data name="DecryptingError" xml:space="preserve">
+    <value>Error decrypting contents!</value>
+    <comment>043</comment>
+  </data>
+  <data name="DecryptingSuccess" xml:space="preserve">
+    <value>Finished decrypting contents.</value>
+    <comment>042</comment>
+  </data>
+  <data name="DirectoryAdd" xml:space="preserve">
+    <value>Adds a folder to the list above. All Wii U games within that folder will be displayed in the list above.</value>
+    <comment>107</comment>
+  </data>
+  <data name="DirectoryRemoveAll" xml:space="preserve">
+    <value>This removes all directories from the list displayed above. The games themselves are not deleted.</value>
+    <comment>106</comment>
+  </data>
+  <data name="DownloadCancel" xml:space="preserve">
+    <value>The download operation has been canceled.</value>
+    <comment>145</comment>
+  </data>
+  <data name="DownloadFailed" xml:space="preserve">
+    <value>Download failed:</value>
+    <comment>047</comment>
+  </data>
+  <data name="DownloadStart" xml:space="preserve">
+    <value>Start Download</value>
+    <comment>104</comment>
+  </data>
+  <data name="DownloadStop" xml:space="preserve">
+    <value>Stop Download</value>
+    <comment>105</comment>
+  </data>
+  <data name="EnterTitleName" xml:space="preserve">
+    <value>Type the name of the title to add.</value>
+    <comment>055</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>ERREUR</value>
+    <comment>034</comment>
+  </data>
+  <data name="EspressoAncastKey" xml:space="preserve">
+    <value>Wii U Espresso Ancast Key</value>
+    <comment>100</comment>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Exception:</value>
+    <comment>154</comment>
+  </data>
+  <data name="FeatureNotImplimented" xml:space="preserve">
+    <value>Vous devez voyager dans le temps pour pouvoir utiliser cette fonctionnalité! :)</value>
+    <comment>040</comment>
+  </data>
+  <data name="FileCompile" xml:space="preserve">
+    <value>Compiles all files within a folder into a SARC archive, then compresses the archive with Yaz0.</value>
+    <comment>116</comment>
+  </data>
+  <data name="FileCount" xml:space="preserve">
+    <value>{0} files, {1} bytes</value>
+    <comment>138</comment>
+  </data>
+  <data name="FileDecompile" xml:space="preserve">
+    <value>Decompresses a Yaz0 file, and if the compressed file is a SARC archive, then it extracts all the files within the archive.</value>
+    <comment>117</comment>
+  </data>
+  <data name="FolderAdd" xml:space="preserve">
+    <value>Add Folder</value>
+    <comment>063</comment>
+  </data>
+  <data name="FolderOpen" xml:space="preserve">
+    <value>Open Folder</value>
+    <comment>080</comment>
+  </data>
+  <data name="FolderSelect" xml:space="preserve">
+    <value>Select Folder</value>
+    <comment>082</comment>
+  </data>
+  <data name="GameDatabaseDelete" xml:space="preserve">
+    <value>Delete Game Database</value>
+    <comment>097</comment>
+  </data>
+  <data name="GameDatabaseExport" xml:space="preserve">
+    <value>Export Game Database</value>
+    <comment>148</comment>
+  </data>
+  <data name="GameDatabaseGeneratedNewer" xml:space="preserve">
+    <value>This game database was generated by a newer version of Uwizard. It may be incompatible.</value>
+    <comment>149</comment>
+  </data>
+  <data name="GameDatabaseImport" xml:space="preserve">
+    <value>Import Game Database</value>
+    <comment>095</comment>
+  </data>
+  <data name="GameFilesExtract" xml:space="preserve">
+    <value>Extract Game Files</value>
+    <comment>067</comment>
+  </data>
+  <data name="GameInformation" xml:space="preserve">
+    <value>Game Information</value>
+    <comment>068</comment>
+  </data>
+  <data name="GameInformationDelete" xml:space="preserve">
+    <value>This permanently deletes all information about all games.</value>
+    <comment>124</comment>
+  </data>
+  <data name="GameInformationDeleteConfirm" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer toutes les informations sur tous les jeux?</value>
+    <comment>039</comment>
+  </data>
+  <data name="GameInformationSave" xml:space="preserve">
+    <value>Save Game Information</value>
+    <comment>066</comment>
+  </data>
+  <data name="GameInformationSaveInformation" xml:space="preserve">
+    <value>Saves any modifications to the game information (like inputting the title key) to a permanent record.</value>
+    <comment>109</comment>
+  </data>
+  <data name="Hosted" xml:space="preserve">
+    <value>Hosted at wiiubrew.net</value>
+    <comment>127</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+    <comment>070</comment>
+  </data>
+  <data name="KeyImport" xml:space="preserve">
+    <value>Import Key</value>
+    <comment>099</comment>
+  </data>
+  <data name="KeysDeleteAll" xml:space="preserve">
+    <value>Delete All Keys</value>
+    <comment>096</comment>
+  </data>
+  <data name="KeysDeleteAllConfirm" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer toutes les clés incluant les title keys?</value>
+    <comment>037</comment>
+  </data>
+  <data name="KeysDeleteAllSuccess" xml:space="preserve">
+    <value>Toutes les clés ont été supprimées!</value>
+    <comment>038</comment>
+  </data>
+  <data name="KeysHide" xml:space="preserve">
+    <value>Hide Keys</value>
+    <comment>094</comment>
+  </data>
+  <data name="LanguageSelect" xml:space="preserve">
+    <value>Please select a language for Uwizard.</value>
+    <comment>171</comment>
+  </data>
+  <data name="LocalFileSkip" xml:space="preserve">
+    <value>Using Local File, Skipping...</value>
+    <comment>144</comment>
+  </data>
+  <data name="NintendoKeyDelete" xml:space="preserve">
+    <value>This permanently deletes all Nintendo-Proprietary keys including title keys.</value>
+    <comment>123</comment>
+  </data>
+  <data name="NintendoKeyHide" xml:space="preserve">
+    <value>Hides all Nintendo-proprietary keys from non-active boxes.</value>
+    <comment>122</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+    <comment>130</comment>
+  </data>
+  <data name="NoCompatableSoundFiles" xml:space="preserve">
+    <value>There are no compatible sound files in the selected directory!</value>
+    <comment>050</comment>
+  </data>
+  <data name="NUSDownloaderU" xml:space="preserve">
+    <value>NUS Downloader U</value>
+    <comment>057</comment>
+  </data>
+  <data name="NUSDownloading" xml:space="preserve">
+    <value>Starting NUS Download. Please be patient!</value>
+    <comment>045</comment>
+  </data>
+  <data name="NUSDownloadSuccess" xml:space="preserve">
+    <value>NUS Download Finished.</value>
+    <comment>046</comment>
+  </data>
+  <data name="NUSTitleDownload" xml:space="preserve">
+    <value>This list provides an easy way to choose NUS titles to download.</value>
+    <comment>113</comment>
+  </data>
+  <data name="NUSTitleID" xml:space="preserve">
+    <value>NUS title ID. This MUST be 16 characters long.</value>
+    <comment>115</comment>
+  </data>
+  <data name="NUSTitleVersion" xml:space="preserve">
+    <value>NUS title version. If this is left blank, then the latest version will be downloaded.</value>
+    <comment>114</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>125</comment>
+  </data>
+  <data name="OpeningOutputDirectory" xml:space="preserve">
+    <value>Opening output directory...</value>
+    <comment>044</comment>
+  </data>
+  <data name="SARCCompile" xml:space="preserve">
+    <value>Compiles all files within a folder into a SARC archive.</value>
+    <comment>118</comment>
+  </data>
+  <data name="SARCExtract" xml:space="preserve">
+    <value>Extracts all the files within a SARC archive.</value>
+    <comment>119</comment>
+  </data>
+  <data name="SARCExtractError" xml:space="preserve">
+    <value>Error extracting SARC archive!</value>
+    <comment>156</comment>
+  </data>
+  <data name="SARCFileType" xml:space="preserve">
+    <value>SARC Archives|*.sarc|All Files|*.*</value>
+    <comment>155</comment>
+  </data>
+  <data name="SARCFolderSelect" xml:space="preserve">
+    <value>Select a folder to pack into a SARC archive.</value>
+    <comment>157</comment>
+  </data>
+  <data name="SARCPackError" xml:space="preserve">
+    <value>Error packing SARC archive!</value>
+    <comment>158</comment>
+  </data>
+  <data name="SARCSZSCompress" xml:space="preserve">
+    <value>Compress SZS</value>
+    <comment>092</comment>
+  </data>
+  <data name="SARCSZSDecompress" xml:space="preserve">
+    <value>Decompress SZS</value>
+    <comment>093</comment>
+  </data>
+  <data name="SARCSZSExtract" xml:space="preserve">
+    <value>Extract SARC</value>
+    <comment>091</comment>
+  </data>
+  <data name="SARCSZSExtractDecompress" xml:space="preserve">
+    <value>Decompress and Extract SARC.SZS</value>
+    <comment>089</comment>
+  </data>
+  <data name="SARCSZSPack" xml:space="preserve">
+    <value>Pack SARC</value>
+    <comment>090</comment>
+  </data>
+  <data name="SARCSZSPackCompress" xml:space="preserve">
+    <value>Pack and Compress SARC.SZS</value>
+    <comment>088</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+    <comment>060</comment>
+  </data>
+  <data name="ShowFullCover" xml:space="preserve">
+    <value>Show Full Cover</value>
+    <comment>065</comment>
+  </data>
+  <data name="ShowGameList" xml:space="preserve">
+    <value>Show Game List</value>
+    <comment>061</comment>
+  </data>
+  <data name="SoundFileLocation" xml:space="preserve">
+    <value>Select where to look for sound files.</value>
+    <comment>049</comment>
+  </data>
+  <data name="SoundFilesInFolder" xml:space="preserve">
+    <value>Sound Files in Selected Folder</value>
+    <comment>083</comment>
+  </data>
+  <data name="SoundManager" xml:space="preserve">
+    <value>Sound Manager</value>
+    <comment>058</comment>
+  </data>
+  <data name="SoundStreamDecode" xml:space="preserve">
+    <value>Decode a Wii U Sound Stream</value>
+    <comment>084</comment>
+  </data>
+  <data name="SoundStreamDecodeMP3" xml:space="preserve">
+    <value>Decode Wii U Sound Stream to MP3(s)</value>
+    <comment>166</comment>
+  </data>
+  <data name="SoundStreamDecodeWAV" xml:space="preserve">
+    <value>Decode Wii U Sound Stream to WAV(s)</value>
+    <comment>153</comment>
+  </data>
+  <data name="SoundStreamError" xml:space="preserve">
+    <value>Either this is not a valid Wii U Sound Stream, or the file is in use by another program.</value>
+    <comment>048</comment>
+  </data>
+  <data name="SoundStreamExportSeparate" xml:space="preserve">
+    <value>Export Channels Separately</value>
+    <comment>164</comment>
+  </data>
+  <data name="SoundStreamExportSeparateInformation" xml:space="preserve">
+    <value>Exports all the channels from one Wii U Sound Stream to multiple files instead of mixing them into one.</value>
+    <comment>165</comment>
+  </data>
+  <data name="SoundStreamExportSeparateMP3" xml:space="preserve">
+    <value>Only each individual channel can be converted to MP3. Do you want convert each channel separetely?</value>
+    <comment>168</comment>
+  </data>
+  <data name="SoundStreamFileType" xml:space="preserve">
+    <value>Wii U Sound Streams|*.bfstm;*.bfwav</value>
+    <comment>169</comment>
+  </data>
+  <data name="SoundStreamPlay" xml:space="preserve">
+    <value>Play Sound Stream</value>
+    <comment>081</comment>
+  </data>
+  <data name="StarbuckAncastKey" xml:space="preserve">
+    <value>Wii U Starbuck Ancast Key</value>
+    <comment>098</comment>
+  </data>
+  <data name="StoringEncryptedContent" xml:space="preserve">
+    <value>Storing Encrypted Content...</value>
+    <comment>132</comment>
+  </data>
+  <data name="SZSCompressError" xml:space="preserve">
+    <value>Error compressing SZS file!</value>
+    <comment>162</comment>
+  </data>
+  <data name="SZSDecompressError" xml:space="preserve">
+    <value>Error decompressing SZS file!</value>
+    <comment>161</comment>
+  </data>
+  <data name="SZSFolderSelect" xml:space="preserve">
+    <value>Select a folder to pack and compress into a SARC.SZS compressed archive.</value>
+    <comment>163</comment>
+  </data>
+  <data name="TextFileType" xml:space="preserve">
+    <value>Text Files|*.txt|All Files|*.*</value>
+    <comment>151</comment>
+  </data>
+  <data name="TicketDownload" xml:space="preserve">
+    <value>Downloading Ticket...</value>
+    <comment>139</comment>
+  </data>
+  <data name="TicketDownloadFailed" xml:space="preserve">
+    <value>Downloading Ticket Failed:</value>
+    <comment>140</comment>
+  </data>
+  <data name="TicketParse" xml:space="preserve">
+    <value>Parsing Ticket...</value>
+    <comment>141</comment>
+  </data>
+  <data name="TicketSelectConfirmation" xml:space="preserve">
+    <value>A ticket is required to decrypt the contents, but a ticket for this title is not available on Nintendo's server. Would you like to select a ticket file to use? The ticket in a Wii U game disc for the same game from NUS is found in \system\\02\\title.tik\.</value>
+    <comment>128</comment>
+  </data>
+  <data name="TicketUnavailable" xml:space="preserve">
+    <value>Ticket Unavailable</value>
+    <comment>142</comment>
+  </data>
+  <data name="TitleAdd" xml:space="preserve">
+    <value>Add Title</value>
+    <comment>076</comment>
+  </data>
+  <data name="TitleAddInformation" xml:space="preserve">
+    <value>Adds the currently entered title and version to the easy-access list.</value>
+    <comment>112</comment>
+  </data>
+  <data name="TitleDelete" xml:space="preserve">
+    <value>Delete Title</value>
+    <comment>075</comment>
+  </data>
+  <data name="TitleDeleteAllInformation" xml:space="preserve">
+    <value>Deletes all titles from the easy-access list.</value>
+    <comment>110</comment>
+  </data>
+  <data name="TitleDeleteInformation" xml:space="preserve">
+    <value>Deletes the selected title from the easy-access list.</value>
+    <comment>111</comment>
+  </data>
+  <data name="TitleDownloadInformation" xml:space="preserve">
+    <value>Downloading Title {0} v{1}... {2} [Latest]</value>
+    <comment>131</comment>
+  </data>
+  <data name="TitleID" xml:space="preserve">
+    <value>Title ID:</value>
+    <comment>078</comment>
+  </data>
+  <data name="TitleKey" xml:space="preserve">
+    <value>Title Key</value>
+    <comment>069</comment>
+  </data>
+  <data name="TitleVersion" xml:space="preserve">
+    <value>Title Version:</value>
+    <comment>136</comment>
+  </data>
+  <data name="TMDDownload" xml:space="preserve">
+    <value>Downloading TMD...</value>
+    <comment>133</comment>
+  </data>
+  <data name="TMDDownloadFailed" xml:space="preserve">
+    <value>Downloading TMD Failed:</value>
+    <comment>134</comment>
+  </data>
+  <data name="TMDParse" xml:space="preserve">
+    <value>Parsing TMD...</value>
+    <comment>135</comment>
+  </data>
+  <data name="UpdateCheck" xml:space="preserve">
+    <value>Check For Updates</value>
+    <comment>103</comment>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>Uwizard est à jour!</value>
+    <comment>036</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version:</value>
+    <comment>077</comment>
+  </data>
+  <data name="WAVFileType" xml:space="preserve">
+    <value>WAV Sound Files|*.wav|MP3 Sound Files|*.mp3</value>
+    <comment>170</comment>
+  </data>
+  <data name="WiiUGameDirectorySearch" xml:space="preserve">
+    <value>Select a directory that contains Wii U games to add to this list.</value>
+    <comment>052</comment>
+  </data>
+  <data name="WiiUGameID" xml:space="preserve">
+    <value>Game ID</value>
+    <comment>072</comment>
+  </data>
+  <data name="WiiUGameInformationSaveConfirm" xml:space="preserve">
+    <value>You have not saved your changes to the current Wii U game's information. This includes the name and the title key. Do you want to save these changes now?</value>
+    <comment>053</comment>
+  </data>
+  <data name="WiiUGameName" xml:space="preserve">
+    <value>Game Name</value>
+    <comment>071</comment>
+  </data>
+  <data name="WiiUGameOpen" xml:space="preserve">
+    <value>Open Wii U Game</value>
+    <comment>073</comment>
+  </data>
+  <data name="WiiUGameScrub" xml:space="preserve">
+    <value>Scrub Wii U Game</value>
+    <comment>064</comment>
+  </data>
+  <data name="WUDManager" xml:space="preserve">
+    <value>WUD Manager</value>
+    <comment>056</comment>
+  </data>
+  <data name="Yaz0Compress" xml:space="preserve">
+    <value>Compresses a file with Yaz0.</value>
+    <comment>120</comment>
+  </data>
+  <data name="Yaz0CompressedFileNot" xml:space="preserve">
+    <value>This file is not Yaz0 compressed!</value>
+    <comment>160</comment>
+  </data>
+  <data name="Yaz0FileTypes" xml:space="preserve">
+    <value>Yaz0 Compressed Files|*.szs|All Files|*.*</value>
+    <comment>159</comment>
+  </data>
+  <data name="Yazz0Decompress" xml:space="preserve">
+    <value>Decompresses a Yaz0 file.</value>
+    <comment>121</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+    <comment>129</comment>
+  </data>
+  <data name="WiiUGameScrubInformation" xml:space="preserve">
+    <value>Zeroes unused data. This allows the backup to be compressed more efficiently using NTFS native compression.</value>
+    <comment>108</comment>
+  </data>
+  <data name="Dowloading" xml:space="preserve">
+    <value>Téléchargement</value>
+    <comment>006</comment>
+  </data>
+</root>

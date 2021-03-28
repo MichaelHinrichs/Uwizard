@@ -1,4 +1,7 @@
-﻿namespace Uwizard {
+﻿using System;
+
+namespace Uwizard {
+    [Obsolete]
     public struct Langs {
         public static string[][] texts = new string[][] {
 #region ENGLISH_UWIZARD
@@ -879,7 +882,7 @@
 "Archivos de flujo de sonido de Wii U|*.bfstm;*.bfwav" /* 169 */ , 
 "Archivos de sonido WAV|*.wav|Archivos de sonido MP3|*.mp4" /* 170 */ , 
 "Seleccione un idioma para Uwizard." /* 171 */ 
-                }
+                },
 #endregion
 #region ITALIAN_UWIZARD
 		new string[] { // Italian
@@ -1058,15 +1061,10 @@
 },
 #endregion
         };
+        [Obsolete]
         public static void loadlang(Uwizard.Form1 userform) {
-            userform.sha1_correct = userform.uwiz_langtext[0];
-            userform.sha1_incorrect = userform.uwiz_langtext[1];
-            userform.sha1_nokey = userform.uwiz_langtext[2];
-            userform.sha1_nosha1 = userform.uwiz_langtext[3];
-            userform.sha1_nosha1 = userform.uwiz_langtext[3];
-            userform.page_wudmanager.Text = userform.uwiz_langtext[56];
-            userform.showfold.Text = userform.uwiz_langtext[61];
-            userform.wudlist_clearfolers.Text = userform.uwiz_langtext[62];
+            userform.ShowGameListCheckBox.Text = userform.uwiz_langtext[61];
+            userform.WUDListClearFoldersButton.Text = userform.uwiz_langtext[62];
             userform.wudlist_addfolder.Text = userform.uwiz_langtext[63];
             userform.button13.Text = userform.uwiz_langtext[64];
             userform.show3d.Text = userform.uwiz_langtext[65];
@@ -1123,7 +1121,7 @@
             userform.bfstm_exchans.Text = userform.uwiz_langtext[164];
             userform.vertext.Text = userform.uwiz_langtext[24] + Form1.getVerText(Form1.myversion);
 
-            userform.toolTip1.SetToolTip(userform.wudlist_clearfolers, userform.uwiz_langtext[106]);
+            userform.toolTip1.SetToolTip(userform.WUDListClearFoldersButton, userform.uwiz_langtext[106]);
             userform.toolTip1.SetToolTip(userform.wudlist_addfolder, userform.uwiz_langtext[107]);
             userform.toolTip1.SetToolTip(userform.button13, userform.uwiz_langtext[108]);
             userform.toolTip1.SetToolTip(userform.button9, userform.uwiz_langtext[109]);

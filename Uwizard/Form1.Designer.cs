@@ -1,3 +1,5 @@
+using Uwizard.Resources.Languages;
+
 namespace Uwizard {
     partial class Form1 {
         /// <summary>
@@ -27,9 +29,9 @@ namespace Uwizard {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.maintabstrip = new System.Windows.Forms.TabControl();
             this.page_wudmanager = new System.Windows.Forms.TabPage();
-            this.showfold = new System.Windows.Forms.CheckBox();
+            this.ShowGameListCheckBox = new System.Windows.Forms.CheckBox();
             this.wud_splitter = new System.Windows.Forms.SplitContainer();
-            this.wudlist_clearfolers = new System.Windows.Forms.Button();
+            this.WUDListClearFoldersButton = new System.Windows.Forms.Button();
             this.wudlist_addfolder = new System.Windows.Forms.Button();
             this.wudlist = new System.Windows.Forms.ListBox();
             this.gcover = new System.Windows.Forms.PictureBox();
@@ -165,7 +167,7 @@ namespace Uwizard {
             // 
             // page_wudmanager
             // 
-            this.page_wudmanager.Controls.Add(this.showfold);
+            this.page_wudmanager.Controls.Add(this.ShowGameListCheckBox);
             this.page_wudmanager.Controls.Add(this.wud_splitter);
             this.page_wudmanager.Controls.Add(this.button13);
             this.page_wudmanager.Controls.Add(this.show3d);
@@ -183,22 +185,22 @@ namespace Uwizard {
             this.page_wudmanager.Padding = new System.Windows.Forms.Padding(3);
             this.page_wudmanager.Size = new System.Drawing.Size(507, 495);
             this.page_wudmanager.TabIndex = 0;
-            this.page_wudmanager.Text = "WUD Manager";
+            this.page_wudmanager.Text = Strings.WUDManager;
             this.page_wudmanager.UseVisualStyleBackColor = true;
             // 
-            // showfold
+            // ShowGameListCheckBox
             // 
-            this.showfold.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.showfold.AutoSize = true;
-            this.showfold.Checked = true;
-            this.showfold.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.showfold.Location = new System.Drawing.Point(64, 429);
-            this.showfold.Name = "showfold";
-            this.showfold.Size = new System.Drawing.Size(103, 17);
-            this.showfold.TabIndex = 13;
-            this.showfold.Text = "Show Game List";
-            this.showfold.UseVisualStyleBackColor = true;
-            this.showfold.CheckedChanged += new System.EventHandler(this.showfold_CheckedChanged);
+            this.ShowGameListCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ShowGameListCheckBox.AutoSize = true;
+            this.ShowGameListCheckBox.Checked = true;
+            this.ShowGameListCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowGameListCheckBox.Location = new System.Drawing.Point(64, 429);
+            this.ShowGameListCheckBox.Name = "ShowGameListCheckBox";
+            this.ShowGameListCheckBox.Size = new System.Drawing.Size(103, 17);
+            this.ShowGameListCheckBox.TabIndex = 13;
+            this.ShowGameListCheckBox.Text = Strings.ShowGameList;
+            this.ShowGameListCheckBox.UseVisualStyleBackColor = true;
+            this.ShowGameListCheckBox.CheckedChanged += new System.EventHandler(this.showfold_CheckedChanged);
             // 
             // wud_splitter
             // 
@@ -208,7 +210,7 @@ namespace Uwizard {
             // 
             // wud_splitter.Panel1
             // 
-            this.wud_splitter.Panel1.Controls.Add(this.wudlist_clearfolers);
+            this.wud_splitter.Panel1.Controls.Add(this.WUDListClearFoldersButton);
             this.wud_splitter.Panel1.Controls.Add(this.wudlist_addfolder);
             this.wud_splitter.Panel1.Controls.Add(this.wudlist);
             this.wud_splitter.Panel1MinSize = 75;
@@ -221,18 +223,18 @@ namespace Uwizard {
             this.wud_splitter.TabIndex = 12;
             this.wud_splitter.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.wud_splitter_SplitterMoved);
             // 
-            // wudlist_clearfolers
+            // WUDListClearFoldersButton
             // 
-            this.wudlist_clearfolers.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.wudlist_clearfolers.Location = new System.Drawing.Point(141, 175);
-            this.wudlist_clearfolers.Name = "wudlist_clearfolers";
-            this.wudlist_clearfolers.Size = new System.Drawing.Size(144, 23);
-            this.wudlist_clearfolers.TabIndex = 2;
-            this.wudlist_clearfolers.Text = "Clear Folder Listä";
-            this.toolTip1.SetToolTip(this.wudlist_clearfolers, "This removes all directories from the list displayed above. The games themselves " +
+            this.WUDListClearFoldersButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.WUDListClearFoldersButton.Location = new System.Drawing.Point(141, 175);
+            this.WUDListClearFoldersButton.Name = "WUDListClearFoldersButton";
+            this.WUDListClearFoldersButton.Size = new System.Drawing.Size(144, 23);
+            this.WUDListClearFoldersButton.TabIndex = 2;
+            this.WUDListClearFoldersButton.Text = Strings.CreateFolderList;
+            this.toolTip1.SetToolTip(this.WUDListClearFoldersButton, "This removes all directories from the list displayed above. The games themselves " +
         "are not deleted.");
-            this.wudlist_clearfolers.UseVisualStyleBackColor = true;
-            this.wudlist_clearfolers.Click += new System.EventHandler(this.wudlist_clearfolers_Click);
+            this.WUDListClearFoldersButton.UseVisualStyleBackColor = true;
+            this.WUDListClearFoldersButton.Click += new System.EventHandler(this.wudlist_clearfolers_Click);
             // 
             // wudlist_addfolder
             // 
@@ -909,8 +911,8 @@ namespace Uwizard {
             this.hideKeys.Name = "hideKeys";
             this.hideKeys.Size = new System.Drawing.Size(109, 17);
             this.hideKeys.TabIndex = 20;
-            this.hideKeys.Text = "Exconder chaves";
-            this.toolTip1.SetToolTip(this.hideKeys, "Hides all Nintendo-proprietary keys from non-active boxes.");
+            this.hideKeys.Text = Strings.KeysHide;
+            this.toolTip1.SetToolTip(this.hideKeys, Strings.NintendoKeyHide);
             this.hideKeys.UseVisualStyleBackColor = true;
             this.hideKeys.CheckedChanged += new System.EventHandler(this.hideKeys_CheckedChanged);
             // 
@@ -1370,8 +1372,8 @@ namespace Uwizard {
         public System.Windows.Forms.Button bfstm_openfolder;
         public System.Windows.Forms.SplitContainer wud_splitter;
         public System.Windows.Forms.ListBox wudlist;
-        public System.Windows.Forms.CheckBox showfold;
-        public System.Windows.Forms.Button wudlist_clearfolers;
+        public System.Windows.Forms.CheckBox ShowGameListCheckBox;
+        public System.Windows.Forms.Button WUDListClearFoldersButton;
         public System.Windows.Forms.Button wudlist_addfolder;
         public System.Windows.Forms.CheckBox nus_usecdecrypt;
         public System.Windows.Forms.ProgressBar nus_pbartotal;
