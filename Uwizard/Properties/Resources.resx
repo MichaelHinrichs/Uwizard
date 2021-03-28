@@ -139,6 +139,9 @@
   <data name="yaz0enc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yaz0enc.exe;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="yaz0enc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yaz0fast.exe;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="bfstm_decoder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bfstm_decoder.exe;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

@@ -77,6 +77,10 @@ namespace Uwizard {
             this.bfstm_dirfiles = new System.Windows.Forms.ListBox();
             this.bfstm_convertbfstm2wav_notlist = new System.Windows.Forms.Button();
             this.page_szsmanager = new System.Windows.Forms.TabPage();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button19 = new System.Windows.Forms.Button();
             this.arc_extractszs = new System.Windows.Forms.Button();
             this.arc_pac_com_sarcszs = new System.Windows.Forms.Button();
             this.arc_createszs = new System.Windows.Forms.Button();
@@ -123,12 +127,12 @@ namespace Uwizard {
             this.wud_splitter.Panel1.SuspendLayout();
             this.wud_splitter.Panel2.SuspendLayout();
             this.wud_splitter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.gcover)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcover)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.page_nus.SuspendLayout();
             this.page_bfstmmanager.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -136,11 +140,12 @@ namespace Uwizard {
             this.splitContainer1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.page_szsmanager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.page_settings.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -223,7 +228,7 @@ namespace Uwizard {
             // 
             // wudlist_clearfolers
             // 
-            this.wudlist_clearfolers.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.wudlist_clearfolers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.wudlist_clearfolers.Location = new System.Drawing.Point(141, 175);
             this.wudlist_clearfolers.Name = "wudlist_clearfolers";
             this.wudlist_clearfolers.Size = new System.Drawing.Size(144, 23);
@@ -236,7 +241,7 @@ namespace Uwizard {
             // 
             // wudlist_addfolder
             // 
-            this.wudlist_addfolder.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.wudlist_addfolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.wudlist_addfolder.Location = new System.Drawing.Point(0, 175);
             this.wudlist_addfolder.Name = "wudlist_addfolder";
             this.wudlist_addfolder.Size = new System.Drawing.Size(135, 23);
@@ -267,14 +272,14 @@ namespace Uwizard {
             this.gcover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gcover.TabIndex = 0;
             this.gcover.TabStop = false;
-            this.gcover.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseMove);
-            this.gcover.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseDown);
             this.gcover.Paint += new System.Windows.Forms.PaintEventHandler(this.gcover_Paint);
+            this.gcover.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseDown);
+            this.gcover.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseMove);
             this.gcover.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gcover_MouseUp);
             // 
             // button13
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button13.Location = new System.Drawing.Point(297, 35);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(207, 23);
@@ -299,7 +304,7 @@ namespace Uwizard {
             // 
             // button9
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.Enabled = false;
             this.button9.Location = new System.Drawing.Point(297, 433);
             this.button9.Name = "button9";
@@ -313,9 +318,9 @@ namespace Uwizard {
             // 
             // button8
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Enabled = false;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Location = new System.Drawing.Point(297, 462);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(207, 30);
@@ -326,7 +331,7 @@ namespace Uwizard {
             // 
             // groupBox8
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.gdesc);
             this.groupBox8.Location = new System.Drawing.Point(297, 244);
             this.groupBox8.Name = "groupBox8";
@@ -348,7 +353,7 @@ namespace Uwizard {
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.gtkey_sha1status);
             this.groupBox7.Controls.Add(this.button7);
             this.groupBox7.Controls.Add(this.gtkey);
@@ -395,12 +400,12 @@ namespace Uwizard {
             this.gtkey.Size = new System.Drawing.Size(201, 17);
             this.gtkey.TabIndex = 0;
             this.gtkey.TextChanged += new System.EventHandler(this.gtkey_TextChanged);
-            this.gtkey.Leave += new System.EventHandler(this.keybox_Leave);
             this.gtkey.Enter += new System.EventHandler(this.keybox_Enter);
+            this.gtkey.Leave += new System.EventHandler(this.keybox_Leave);
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.gregion);
             this.groupBox6.Controls.Add(this.gname);
             this.groupBox6.Location = new System.Drawing.Point(297, 108);
@@ -413,7 +418,7 @@ namespace Uwizard {
             // gregion
             // 
             this.gregion.BackColor = System.Drawing.SystemColors.Control;
-            this.gregion.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.gregion.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gregion.Location = new System.Drawing.Point(6, 43);
             this.gregion.Name = "gregion";
             this.gregion.ReadOnly = true;
@@ -424,7 +429,7 @@ namespace Uwizard {
             // gname
             // 
             this.gname.BackColor = System.Drawing.SystemColors.Control;
-            this.gname.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.gname.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gname.Location = new System.Drawing.Point(6, 14);
             this.gname.Name = "gname";
             this.gname.ReadOnly = true;
@@ -435,7 +440,7 @@ namespace Uwizard {
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.gid);
             this.groupBox5.Location = new System.Drawing.Point(297, 64);
             this.groupBox5.Name = "groupBox5";
@@ -447,7 +452,7 @@ namespace Uwizard {
             // gid
             // 
             this.gid.BackColor = System.Drawing.SystemColors.Control;
-            this.gid.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.gid.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gid.Location = new System.Drawing.Point(6, 14);
             this.gid.Name = "gid";
             this.gid.ReadOnly = true;
@@ -457,7 +462,7 @@ namespace Uwizard {
             // 
             // button6
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Location = new System.Drawing.Point(297, 6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(207, 23);
@@ -596,7 +601,7 @@ namespace Uwizard {
             // nus_usecdecrypt
             // 
             this.nus_usecdecrypt.AutoSize = true;
-            this.nus_usecdecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.nus_usecdecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nus_usecdecrypt.Location = new System.Drawing.Point(104, 29);
             this.nus_usecdecrypt.Name = "nus_usecdecrypt";
             this.nus_usecdecrypt.Size = new System.Drawing.Size(108, 17);
@@ -779,6 +784,10 @@ namespace Uwizard {
             // 
             // page_szsmanager
             // 
+            this.page_szsmanager.Controls.Add(this.button21);
+            this.page_szsmanager.Controls.Add(this.button20);
+            this.page_szsmanager.Controls.Add(this.numericUpDown1);
+            this.page_szsmanager.Controls.Add(this.button19);
             this.page_szsmanager.Controls.Add(this.arc_extractszs);
             this.page_szsmanager.Controls.Add(this.arc_pac_com_sarcszs);
             this.page_szsmanager.Controls.Add(this.arc_createszs);
@@ -792,6 +801,74 @@ namespace Uwizard {
             this.page_szsmanager.TabIndex = 3;
             this.page_szsmanager.Text = "Archive Manager";
             this.page_szsmanager.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            this.button21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button21.Location = new System.Drawing.Point(127, 366);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(244, 23);
+            this.button21.TabIndex = 10;
+            this.button21.Text = "(QUICK) Pack And Compress";
+            this.toolTip1.SetToolTip(this.button21, "Extracts all the files within a SARC archive.");
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button20
+            // 
+            this.button20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button20.Location = new System.Drawing.Point(127, 337);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(244, 23);
+            this.button20.TabIndex = 9;
+            this.button20.Text = "Quick SZS";
+            this.toolTip1.SetToolTip(this.button20, "Compiles all files within a folder into a SARC srchive, then compresses the archi" +
+        "ve with Yaz0.");
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Hexadecimal = true;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            4096,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(315, 308);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.numericUpDown1.Size = new System.Drawing.Size(56, 20);
+            this.numericUpDown1.TabIndex = 8;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            16384,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // button19
+            // 
+            this.button19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button19.Location = new System.Drawing.Point(127, 308);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(182, 23);
+            this.button19.TabIndex = 7;
+            this.button19.Text = "Pack .PACK (Adjustable Padding)";
+            this.toolTip1.SetToolTip(this.button19, "Compiles all files within a folder into a SARC srchive, then compresses the archi" +
+        "ve with Yaz0.");
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
             // 
             // arc_extractszs
             // 
@@ -862,7 +939,7 @@ namespace Uwizard {
             this.arc_extractsarc.Name = "arc_extractsarc";
             this.arc_extractsarc.Size = new System.Drawing.Size(244, 23);
             this.arc_extractsarc.TabIndex = 3;
-            this.arc_extractsarc.Text = "Extract SARC";
+            this.arc_extractsarc.Text = "Extract SARC and PACK";
             this.toolTip1.SetToolTip(this.arc_extractsarc, "Extracts all the files within a SARC archive.");
             this.arc_extractsarc.UseVisualStyleBackColor = true;
             this.arc_extractsarc.Click += new System.EventHandler(this.arc_extractsarc_Click);
@@ -904,7 +981,7 @@ namespace Uwizard {
             // 
             this.hideKeys.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.hideKeys.AutoSize = true;
-            this.hideKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.hideKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hideKeys.Location = new System.Drawing.Point(417, 192);
             this.hideKeys.Name = "hideKeys";
             this.hideKeys.Size = new System.Drawing.Size(109, 17);
@@ -994,7 +1071,7 @@ namespace Uwizard {
             // askey_prev
             // 
             this.askey_prev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.askey_prev.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.askey_prev.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.askey_prev.ForeColor = System.Drawing.SystemColors.WindowText;
             this.askey_prev.Location = new System.Drawing.Point(6, 19);
             this.askey_prev.MaxLength = 32;
@@ -1002,8 +1079,8 @@ namespace Uwizard {
             this.askey_prev.Size = new System.Drawing.Size(241, 18);
             this.askey_prev.TabIndex = 9;
             this.askey_prev.TextChanged += new System.EventHandler(this.askey_prev_TextChanged);
-            this.askey_prev.Leave += new System.EventHandler(this.keybox_Leave);
             this.askey_prev.Enter += new System.EventHandler(this.keybox_Enter);
+            this.askey_prev.Leave += new System.EventHandler(this.keybox_Leave);
             // 
             // groupBox1
             // 
@@ -1041,7 +1118,7 @@ namespace Uwizard {
             // aekey_prev
             // 
             this.aekey_prev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.aekey_prev.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.aekey_prev.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aekey_prev.ForeColor = System.Drawing.SystemColors.WindowText;
             this.aekey_prev.Location = new System.Drawing.Point(6, 19);
             this.aekey_prev.MaxLength = 32;
@@ -1049,13 +1126,13 @@ namespace Uwizard {
             this.aekey_prev.Size = new System.Drawing.Size(241, 18);
             this.aekey_prev.TabIndex = 9;
             this.aekey_prev.TextChanged += new System.EventHandler(this.aekey_prev_TextChanged);
-            this.aekey_prev.Leave += new System.EventHandler(this.keybox_Leave);
             this.aekey_prev.Enter += new System.EventHandler(this.keybox_Enter);
+            this.aekey_prev.Leave += new System.EventHandler(this.keybox_Leave);
             // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(228, 184);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 31);
@@ -1100,7 +1177,7 @@ namespace Uwizard {
             // ckey_prev
             // 
             this.ckey_prev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.ckey_prev.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ckey_prev.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckey_prev.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ckey_prev.Location = new System.Drawing.Point(6, 19);
             this.ckey_prev.MaxLength = 32;
@@ -1108,13 +1185,13 @@ namespace Uwizard {
             this.ckey_prev.Size = new System.Drawing.Size(241, 18);
             this.ckey_prev.TabIndex = 9;
             this.ckey_prev.TextChanged += new System.EventHandler(this.ckey_prev_TextChanged);
-            this.ckey_prev.Leave += new System.EventHandler(this.keybox_Leave);
             this.ckey_prev.Enter += new System.EventHandler(this.keybox_Enter);
+            this.ckey_prev.Leave += new System.EventHandler(this.keybox_Leave);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(8, 184);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 31);
@@ -1258,19 +1335,19 @@ namespace Uwizard {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 521);
             this.Controls.Add(this.maintabstrip);
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(523, 364);
             this.Name = "Form1";
             this.Text = "Uwizard";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.maintabstrip.ResumeLayout(false);
             this.page_wudmanager.ResumeLayout(false);
             this.page_wudmanager.PerformLayout();
             this.wud_splitter.Panel1.ResumeLayout(false);
             this.wud_splitter.Panel2.ResumeLayout(false);
             this.wud_splitter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.gcover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcover)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -1279,7 +1356,7 @@ namespace Uwizard {
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.page_nus.ResumeLayout(false);
             this.page_nus.PerformLayout();
             this.page_bfstmmanager.ResumeLayout(false);
@@ -1289,6 +1366,7 @@ namespace Uwizard {
             this.splitContainer1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.page_szsmanager.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.page_settings.ResumeLayout(false);
             this.page_settings.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1297,7 +1375,7 @@ namespace Uwizard {
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -1402,6 +1480,10 @@ namespace Uwizard {
         public System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.Button button18;
         public System.Windows.Forms.Button bfstm_convert1fromlisttomp3;
+        public System.Windows.Forms.Button button19;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.Button button20;
+        public System.Windows.Forms.Button button21;
     }
 }
 
